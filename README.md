@@ -1,5 +1,8 @@
 # thresh_demo
 
+Threshold key distribution demo app. Intent being to shard an ethereum key across multiple iOS devices, none of which have the full key, and coordinate signing from a server who also never knows the key.
+
+
 ```
 (thresh_venv) cmc@cmc-pro thresh_demo % /Users/cmc/thresh_demo/thresh_venv/bin/python /Users/cmc/thresh_demo/test_client.py
 
