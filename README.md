@@ -1,6 +1,6 @@
 # thresh_demo
 
-Threshold key distribution demo app. Intent being to shard an ethereum key across multiple iOS devices, none of which have the full key, and coordinate signing from a server who also never knows the key.
+Threshold key distribution demo app. The intent is to securely shard an Ethereum key across multiple iOS devices, none of which ever have the full private key, and coordinate distributed partial signing from a server that also never knows the key. Signatures are then additive, and a final broadcastable ethereum transaction produced. Backend would run in a TEE, for example AWS Nitro enclave to prevent modification.
 
 
 ```
