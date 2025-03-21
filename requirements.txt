@@ -1,0 +1,4 @@
+Flask
+cryptography
+eth-account
+eth-hash[pycryptodome]
