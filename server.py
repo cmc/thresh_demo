@@ -31,6 +31,24 @@ total_signers = 5
 # Store device information
 devices = {}  # {device_id: {"public_key": key, "rsa_key": key}}
 
+# Constants
+THRESHOLD = 3
+TOTAL_SIGNERS = 5
+CURVE = ec.SECP256K1()
+# SECP256K1 curve order (n)
+CURVE_ORDER = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+
+# Storage
+dkg_shares = {}  # {device_id: {"commitments": [], "shares": {}}}
+dkg_round = 0
+signing_data = {
+    "commitments": {},  # {device_id: {"R_i": point, "Gamma_i": point}}
+    "mta_values": {},  # {from_device: {to_device: delta_ij}}
+    "sig_shares": {},  # {device_id: sigma_i}
+    "R": None,  # Combined R value
+    "message_hash": None
+}
+
 # Utility: Hash Ethereum transactions
 def hash_transaction(tx_data):
     tx_json = json.dumps(tx_data, sort_keys=True).encode()
@@ -217,6 +235,177 @@ def recover_private_key():
         return jsonify({"error": "Not enough shares to recover the private key."}), 403
 
     return jsonify({"recovered_private_key": "Decryption successful (mock response)"})
+
+@app.route('/dkg/start', methods=['POST'])
+def start_dkg():
+    """Initialize a new DKG round"""
+    global dkg_round
+    dkg_round = 1
+    dkg_shares.clear()
+    print("\n=== Starting New DKG Round ===")
+    return jsonify({"status": "success", "round": dkg_round})
+
+@app.route('/dkg/submit', methods=['POST'])
+def submit_dkg_data():
+    """Submit DKG shares and commitments"""
+    data = request.json
+    device_id = data['device_id']
+    commitments = data['commitments']
+    shares = data['shares']
+    
+    print(f"\n=== Received DKG Data from {device_id} ===")
+    print(f"  Commitments: {len(commitments)}")
+    print(f"  Shares: {len(shares)}")
+    
+    # Store the data
+    dkg_shares[device_id] = {
+        "commitments": commitments,
+        "shares": shares
+    }
+    
+    # Check if we have all shares
+    if len(dkg_shares) == TOTAL_SIGNERS:
+        print("  ✓ All DKG shares received")
+        return jsonify({
+            "status": "complete",
+            "shares": dkg_shares
+        })
+    
+    print(f"  → Waiting for more shares ({len(dkg_shares)}/{TOTAL_SIGNERS})")
+    return jsonify({
+        "status": "waiting",
+        "current": len(dkg_shares),
+        "total": TOTAL_SIGNERS
+    })
+
+@app.route('/signing/start', methods=['POST'])
+def start_signing():
+    """Initialize a new signing round"""
+    data = request.json
+    message_hash = data['message_hash']
+    
+    # Reset signing data
+    signing_data.clear()
+    signing_data.update({
+        "commitments": {},
+        "mta_values": {},
+        "sig_shares": {},
+        "R": None,
+        "message_hash": message_hash
+    })
+    
+    print("\n=== Starting New Signing Round ===")
+    print(f"  Message hash: {message_hash}")
+    return jsonify({"status": "success", "message_hash": message_hash})
+
+@app.route('/signing/commit', methods=['POST'])
+def submit_commitment():
+    """Submit R_i and Gamma_i commitments"""
+    data = request.json
+    device_id = data['device_id']
+    commitment = data['commitment']
+    
+    print(f"\n=== Received Commitment from {device_id} ===")
+    print(f"  R_i: ({commitment['R_i']['x']}, {commitment['R_i']['y']})")
+    print(f"  Gamma_i: ({commitment['Gamma_i']['x']}, {commitment['Gamma_i']['y']})")
+    
+    signing_data["commitments"][device_id] = commitment
+    
+    if len(signing_data["commitments"]) == TOTAL_SIGNERS:
+        print("  ✓ All commitments received")
+        return jsonify({
+            "status": "complete",
+            "commitments": signing_data["commitments"]
+        })
+    
+    print(f"  → Waiting for more commitments ({len(signing_data['commitments'])}/{TOTAL_SIGNERS})")
+    return jsonify({
+        "status": "waiting",
+        "current": len(signing_data["commitments"]),
+        "total": TOTAL_SIGNERS
+    })
+
+@app.route('/signing/mta', methods=['POST'])
+def submit_mta():
+    """Submit MtA protocol values"""
+    data = request.json
+    from_device = data['from']
+    to_device = data['to']
+    delta = data['delta']
+    
+    print(f"\n=== Received MtA Value ===")
+    print(f"  From: {from_device}")
+    print(f"  To: {to_device}")
+    
+    if from_device not in signing_data["mta_values"]:
+        signing_data["mta_values"][from_device] = {}
+    signing_data["mta_values"][from_device][to_device] = delta
+    
+    # Count total MtA values
+    total_values = sum(len(values) for values in signing_data["mta_values"].values())
+    expected_values = TOTAL_SIGNERS * (TOTAL_SIGNERS - 1)  # Each device sends to all others
+    
+    if total_values == expected_values:
+        print("  ✓ All MtA values received")
+        return jsonify({
+            "status": "complete",
+            "mta_values": signing_data["mta_values"]
+        })
+    
+    print(f"  → Waiting for more MtA values ({total_values}/{expected_values})")
+    return jsonify({
+        "status": "waiting",
+        "current": total_values,
+        "total": expected_values
+    })
+
+@app.route('/signing/share', methods=['POST'])
+def submit_signature_share():
+    """Submit partial signature share"""
+    data = request.json
+    device_id = data['device_id']
+    share = data['share']
+    
+    print(f"\n=== Received Signature Share from {device_id} ===")
+    signing_data["sig_shares"][device_id] = share
+    
+    if len(signing_data["sig_shares"]) == THRESHOLD:
+        print("  ✓ Threshold of signature shares received")
+        # Combine shares into final signature
+        shares = list(signing_data["sig_shares"].values())
+        R = signing_data["R"]
+        
+        # Get r value from R point
+        r = int(R.public_numbers().x) % CURVE_ORDER
+        
+        # Sum all shares modulo curve order
+        s = sum(int(share, 16) for share in shares) % CURVE_ORDER
+        
+        # Standard v value for Ethereum
+        v = 27
+        
+        final_signature = {
+            'r': hex(r),
+            's': hex(s),
+            'v': hex(v)
+        }
+        
+        print("\n=== Final Signature ===")
+        print(f"  R: {final_signature['r']}")
+        print(f"  S: {final_signature['s']}")
+        print(f"  V: {final_signature['v']}")
+        
+        return jsonify({
+            "status": "complete",
+            "signature": final_signature
+        })
+    
+    print(f"  → Waiting for more shares ({len(signing_data['sig_shares'])}/{THRESHOLD})")
+    return jsonify({
+        "status": "waiting",
+        "current": len(signing_data["sig_shares"]),
+        "total": THRESHOLD
+    })
 
 if __name__ == '__main__':
     app.run(debug=True, port=5010)
