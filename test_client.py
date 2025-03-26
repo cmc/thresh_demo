@@ -8,6 +8,7 @@ import json
 import requests
 import random
 import os
+import secrets
 
 # Flask Server URL
 SERVER_URL = "http://localhost:5010"
@@ -18,6 +19,96 @@ IPHONE_KEYS = {}  # {device_id: {"private": private_key, "public": public_key, "
 # Threshold settings
 THRESHOLD = 3
 TOTAL_SIGNERS = 5
+
+# Curve parameters
+CURVE_ORDER = 2**256 - 2**32 - 977
+CURVE = ec.SECP256K1()
+
+class GG20Device:
+    def __init__(self, device_id, private_key):
+        self.device_id = device_id
+        self.private_key = private_key
+        self.public_key = private_key.public_key()
+        self.secret_share = private_key.private_numbers().private_value
+
+    def start_signing(self, message_hash):
+        """Round 1 of GG20 signing: Generate k_i and gamma_i"""
+        print(f"\n=== Signing Round 1 for {self.device_id} ===")
+        
+        # Generate random k_i and gamma_i
+        self.k_i = secrets.randbelow(CURVE_ORDER)
+        self.gamma_i = secrets.randbelow(CURVE_ORDER)
+        self.w_i = secrets.randbelow(CURVE_ORDER)
+        
+        # Compute R_i = g^k_i and commitment
+        self.R_i = CURVE.generator * self.k_i
+        self.Gamma_i = CURVE.generator * self.gamma_i
+        
+        # Create commitment to both values
+        commitment = {
+            'R_i': {
+                'x': self.R_i.public_numbers().x,
+                'y': self.R_i.public_numbers().y
+            },
+            'Gamma_i': {
+                'x': self.Gamma_i.public_numbers().x,
+                'y': self.Gamma_i.public_numbers().y
+            }
+        }
+        
+        print("  ✓ Generated random values")
+        print("  ✓ Created commitments")
+        return commitment
+    
+    def run_mta(self, other_device):
+        """Run Multiplicative to Additive (MtA) protocol with another device"""
+        print(f"  Running MtA with {other_device.device_id}...")
+        
+        # MtA for k_i * gamma_j
+        alpha_ij = secrets.randbelow(CURVE_ORDER)
+        beta_ij = secrets.randbelow(CURVE_ORDER)
+        
+        # Simulate secure two-party computation
+        # In real implementation, this would use encryption
+        delta_ij = (self.k_i * other_device.gamma_i + alpha_ij + beta_ij) % CURVE_ORDER
+        
+        print("  ✓ MtA protocol complete")
+        return delta_ij
+    
+    def compute_signature_share(self, message_hash, R):
+        """Compute partial signature using MtA results"""
+        print(f"\n=== Computing signature share for {self.device_id} ===")
+        
+        # Convert message_hash to integer
+        m = int(message_hash, 16)
+        
+        # Compute sigma_i = k_i * m + r * secret_share_i
+        r = R.public_numbers().x % CURVE_ORDER
+        sigma_i = (self.k_i * m + r * self.secret_share) % CURVE_ORDER
+        
+        print("  ✓ Computed signature share")
+        return sigma_i
+    
+    @staticmethod
+    def combine_signature_shares(shares, R):
+        """Combine signature shares into final signature"""
+        print("\n=== Combining Signature Shares ===")
+        
+        # Sum all shares modulo curve order
+        sigma = sum(shares) % CURVE_ORDER
+        
+        # Get r value from R point
+        r = R.public_numbers().x % CURVE_ORDER
+        
+        # Format as Ethereum signature
+        v = 27  # or 28, depending on y-parity of R
+        
+        print("  ✓ Combined shares into final signature")
+        return {
+            'r': hex(r),
+            's': hex(sigma),
+            'v': hex(v)
+        }
 
 def generate_key_share():
     """Generate a partial key share for this device"""
@@ -393,6 +484,65 @@ def submit_signatures(txn_hash):
             
     else:
         print("\n✗ No final signature received from server")
+
+def run_gg20_dkg():
+    devices = {}
+    for i in range(1, TOTAL_SIGNERS + 1):
+        device_id = f"iphone_{i}"
+        private_key = ec.generate_private_key(ec.SECP256K1())
+        devices[device_id] = GG20Device(device_id, private_key)
+    return devices
+
+def run_gg20_signing(devices, message_hash):
+    """Run the GG20 signing protocol"""
+    print("\n🔏 Starting GG20 Signing Protocol")
+    print("=================================")
+    
+    # Round 1: Generate commitments
+    print("\n=== Round 1: Generating Commitments ===")
+    commitments = {}
+    for device_id, device in devices.items():
+        commitments[device_id] = device.start_signing(message_hash)
+    
+    # Round 2: Run MtA protocol
+    print("\n=== Round 2: Running MtA Protocol ===")
+    delta_values = {}
+    for i, (device_id, device) in enumerate(devices.items()):
+        delta_values[device_id] = {}
+        for other_id, other_device in devices.items():
+            if device_id != other_id:
+                delta = device.run_mta(other_device)
+                delta_values[device_id][other_id] = delta
+    
+    # Round 3: Compute R value
+    print("\n=== Round 3: Computing Group R Value ===")
+    R = None
+    for device_id, commitment in commitments.items():
+        R_i = ec.EllipticCurvePublicNumbers(
+            commitment['R_i']['x'],
+            commitment['R_i']['y'],
+            CURVE
+        ).public_key()
+        if R is None:
+            R = R_i
+        else:
+            R += R_i
+    
+    # Round 4: Generate signature shares
+    print("\n=== Round 4: Generating Signature Shares ===")
+    sig_shares = {}
+    for device_id, device in devices.items():
+        sig_shares[device_id] = device.compute_signature_share(message_hash, R)
+    
+    # Round 5: Combine shares
+    print("\n=== Round 5: Combining Signature Shares ===")
+    final_sig = GG20Device.combine_signature_shares(sig_shares.values(), R)
+    
+    print("\n✓ Signing Complete!")
+    print(f"  R: {final_sig['r']}")
+    print(f"  S: {final_sig['s']}")
+    print(f"  V: {final_sig['v']}")
+    return final_sig
 
 # Run test flow
 if __name__ == "__main__":
