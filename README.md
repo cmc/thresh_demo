@@ -16,23 +16,23 @@ Generating key material for iphone_1...
   ✓ EC key share generated for signing
   ✓ RSA key generated for encryption
   EC Public share: -----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEHWW1DfpiAk9hWZ5z2Nt87tu4O33s/j/q
-AWhiWk9hoAx86o1OkEQ3SfmCU2j5B6ptV6tjcdnmBk2nCA2hk2ZeXw==
+MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEBnzw07+ueb519IiSEafz1ZuYKDM77kX2
+n+FWaBooGAaSj77LR4nOAqyyVtCIXZYPhOGdPgrP3C8nQ/4Ek9Chnw==
 -----END PUBLIC KEY-----
 
   RSA Public key: -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAryP2Wfbqix5zdZC48/+g
-BG91k8OyInrjzDSXhpMUr55+yUMZ20zwG/JJ6ZOc7nUMJg7P3jcrXByo1Qk2nsef
-BrWPzc+/en5+6tTXHVYt1ziEGvo0frMshX3gGNw2C71Vbz69MG01ceEZe5BfTUQ+
-8qTy/r0um9a5/mBIH+GSa/hiXir/0HIvBV64AzxhJ50MliuTGbToldtu/rTtO7cc
-tsXoxYDpW+rg5ob0+fJoeSh+W/hjAJCMbC1/p3U9GKEXhgs/+AYNCkHTpOWvWhX8
-UlZJZuww7IFJoLEA4lo3d72tSvT4cVb/Q8FwOws37NgjjHMyk8SOXfa3W5jtkKcy
-/QIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqwnygVJNjP4gmXrAYz78
+IMUxcqjnsNsX4D3aYWc4M/xFxqr03SLEX97389RNi92LXeEzRRcKvh07OJhAFNox
+9wT0ZsxZAz8+Jsde1NCuYPb/zO+y/Wy3UZ7c3kzywnFZrlK2wIUuYQDc2jQgoNlH
+Vl4Kg9dTN3739a7rzqzdAfedrHWBxhxzwis9xGhYlC3oROK6KIZQ1VrJaAfXDtYU
+IOqS3844ElAKn5zfVCTbe5KF/zj8G13EbAm5oH4A2/fYl9zOoKkXH6OIXqhlpcpU
+Aa+pB4gvgOiWBt+5nw4ytx5PgfeVA9fRg45NM0fai9NKez1/zVMB/lLaNwHDwffC
+gQIDAQAB
 -----END PUBLIC KEY-----
 
   Signing data for iphone_1...
-  Data to sign: {"device_id": "iphone_1", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEHWW1DfpiAk9hWZ5z2Nt87tu4O33s/j/q\nAWhiWk9hoAx86o1OkEQ3SfmCU2j5B6ptV6tjcdnmBk2nCA2hk2ZeXw==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAryP2Wfbqix5zdZC48/+g\nBG91k8OyInrjzDSXhpMUr55+yUMZ20zwG/JJ6ZOc7nUMJg7P3jcrXByo1Qk2nsef\nBrWPzc+/en5+6tTXHVYt1ziEGvo0frMshX3gGNw2C71Vbz69MG01ceEZe5BfTUQ+\n8qTy/r0um9a5/mBIH+GSa/hiXir/0HIvBV64AzxhJ50MliuTGbToldtu/rTtO7cc\ntsXoxYDpW+rg5ob0+fJoeSh+W/hjAJCMbC1/p3U9GKEXhgs/+AYNCkHTpOWvWhX8\nUlZJZuww7IFJoLEA4lo3d72tSvT4cVb/Q8FwOws37NgjjHMyk8SOXfa3W5jtkKcy\n/QIDAQAB\n-----END PUBLIC KEY-----\n"}
-  ✓ Signature generated: MEQCIAprznVTimGRZm+ryEqHxXnHPtYH...
+  Data to sign: {"device_id": "iphone_1", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEBnzw07+ueb519IiSEafz1ZuYKDM77kX2\nn+FWaBooGAaSj77LR4nOAqyyVtCIXZYPhOGdPgrP3C8nQ/4Ek9Chnw==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqwnygVJNjP4gmXrAYz78\nIMUxcqjnsNsX4D3aYWc4M/xFxqr03SLEX97389RNi92LXeEzRRcKvh07OJhAFNox\n9wT0ZsxZAz8+Jsde1NCuYPb/zO+y/Wy3UZ7c3kzywnFZrlK2wIUuYQDc2jQgoNlH\nVl4Kg9dTN3739a7rzqzdAfedrHWBxhxzwis9xGhYlC3oROK6KIZQ1VrJaAfXDtYU\nIOqS3844ElAKn5zfVCTbe5KF/zj8G13EbAm5oH4A2/fYl9zOoKkXH6OIXqhlpcpU\nAa+pB4gvgOiWBt+5nw4ytx5PgfeVA9fRg45NM0fai9NKez1/zVMB/lLaNwHDwffC\ngQIDAQAB\n-----END PUBLIC KEY-----\n"}
+  ✓ Signature generated: MEYCIQDCQs4OMJIQ5VA3O9Y/lYk1TlFj...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending enrollment request to server...
@@ -44,23 +44,23 @@ Generating key material for iphone_2...
   ✓ EC key share generated for signing
   ✓ RSA key generated for encryption
   EC Public share: -----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEuT3n5y0lu4T+9rJcG3xYEDeVi22RTSaA
-IDHU8L/Yw2fB2ayfUcJMGs+mGj8ss+TnHkDf33aoGE6e+7HM4ORJ/w==
+MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEOVELyO+6w5FQrljA5vtguXOH/7iem3JR
+phWqmWb7efHnBgkQ3k27JkaXo9iLR3mOxqdk6mLmbRZK6TqldsDgIA==
 -----END PUBLIC KEY-----
 
   RSA Public key: -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsjSfSNv6G8sXiFPytU80
-O/VCL2q0QmaOJ3fcrxODu0dAgepliPkwCsKdeCW+nIIc2l6QuZzc7ZzLmswGrHhR
-XGPGoqKHHjjVAZyD5g35oFvf+BElZoXqzyQG1D438o6UX1LAXnn8w0Ed8rzt2l9B
-O3vNnb9EprtBg5Y9acDNqXCxj0ZTQKm1ox8Mkw3Nd2b2q2EerJhqRY3iLp98fkLd
-GAzpsp57kevWGVoS9Jyj2WoA2nQKENUjvDe2s7va7qVFZjttpnVZAfGQhcC6bU2R
-Brqvadwo0ADax5hnhmyBdn3uEs8+NI+9KnQf518rkfGGvBHPU9SuHWYTYN/erR6p
-CQIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArSFunC2yZDAOxJSdgk3g
+TD3vr6WfRX4oseUej71OvLfH06OROekMZWuzVxD40eyG6atSAxIgqElrIgPLb+r7
+xqJDPlx0S86npGtAJbnkSXKAde7PW7Zt9W+APXV/3PdbTA9glcvGD4WcMPIq77XA
+rgAsiBoKz9AcYzAmBcuZueS55ldVcD1yuC88efgM2Qq4utt+T60nwgdX5Yc+tsET
+uF0EPXE/in5XIHQXKWfS5h8OssYe2Gi/SOC6dBAdzndTza3UOfPY+tk5Gq8oQlO7
+uEPOYs8XSkR73lcCGUPsm8QfSakXhFGzs+dDOxwXUoH05YOSwyVOOFuAqxLyb2M6
+wQIDAQAB
 -----END PUBLIC KEY-----
 
   Signing data for iphone_2...
-  Data to sign: {"device_id": "iphone_2", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEuT3n5y0lu4T+9rJcG3xYEDeVi22RTSaA\nIDHU8L/Yw2fB2ayfUcJMGs+mGj8ss+TnHkDf33aoGE6e+7HM4ORJ/w==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsjSfSNv6G8sXiFPytU80\nO/VCL2q0QmaOJ3fcrxODu0dAgepliPkwCsKdeCW+nIIc2l6QuZzc7ZzLmswGrHhR\nXGPGoqKHHjjVAZyD5g35oFvf+BElZoXqzyQG1D438o6UX1LAXnn8w0Ed8rzt2l9B\nO3vNnb9EprtBg5Y9acDNqXCxj0ZTQKm1ox8Mkw3Nd2b2q2EerJhqRY3iLp98fkLd\nGAzpsp57kevWGVoS9Jyj2WoA2nQKENUjvDe2s7va7qVFZjttpnVZAfGQhcC6bU2R\nBrqvadwo0ADax5hnhmyBdn3uEs8+NI+9KnQf518rkfGGvBHPU9SuHWYTYN/erR6p\nCQIDAQAB\n-----END PUBLIC KEY-----\n"}
-  ✓ Signature generated: MEQCICYySL5ddb+6hnqzEJOE+2zlPFrp...
+  Data to sign: {"device_id": "iphone_2", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEOVELyO+6w5FQrljA5vtguXOH/7iem3JR\nphWqmWb7efHnBgkQ3k27JkaXo9iLR3mOxqdk6mLmbRZK6TqldsDgIA==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArSFunC2yZDAOxJSdgk3g\nTD3vr6WfRX4oseUej71OvLfH06OROekMZWuzVxD40eyG6atSAxIgqElrIgPLb+r7\nxqJDPlx0S86npGtAJbnkSXKAde7PW7Zt9W+APXV/3PdbTA9glcvGD4WcMPIq77XA\nrgAsiBoKz9AcYzAmBcuZueS55ldVcD1yuC88efgM2Qq4utt+T60nwgdX5Yc+tsET\nuF0EPXE/in5XIHQXKWfS5h8OssYe2Gi/SOC6dBAdzndTza3UOfPY+tk5Gq8oQlO7\nuEPOYs8XSkR73lcCGUPsm8QfSakXhFGzs+dDOxwXUoH05YOSwyVOOFuAqxLyb2M6\nwQIDAQAB\n-----END PUBLIC KEY-----\n"}
+  ✓ Signature generated: MEUCIQDf/rXokJNx6zENIy94Ucd5X+w0...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending enrollment request to server...
@@ -72,23 +72,23 @@ Generating key material for iphone_3...
   ✓ EC key share generated for signing
   ✓ RSA key generated for encryption
   EC Public share: -----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEvUN1ByJ7cXRhEnNG9XsQQ/UMEgxtYZ2u
-FMSTSUgg4Nh9qJoAM2nyvDHZeZ26q8RDRaArFxChqeyzLQOCSa/tIg==
+MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAE9WsrgnnM6DL8AQB/mKLD2Y3L+IRVNHoh
+g5rDLRUpwpnhcxsZCN4BuHPvFApYt31BtvALqo0M2r6zbPO7JJbZeQ==
 -----END PUBLIC KEY-----
 
   RSA Public key: -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtvCiCl5Wywfsw5UBG/rL
-9LqmX+VYY8PMJbhO+ToBNN8IaXJggQUklpY1rv2waNXyW5gSVsv9vfjGRozThU5A
-XDB4dSBKdOMIzvzqeAT4GgCJvJi9XVF4qOYqsr5rIFmxOiZx5w818bsuC5a8fgBW
-fmlmnA9xL2ZkR39Cg0kngW9WlvUdtXRKOaKjzi7NeiUs2XvTS/Gqmyxrs/jIaicX
-TVkfm/UNks8c4Wi93RWDm06SVNm4JRhfZbE84PjE3fEJE4H3Eh3rS0V9NX3fzQa8
-/Q7vCi0L4motLiGFr/GhMietcQwkMLa0hV3QoSdbSrxHdv45LJgntXpoXFA+YIoU
-fQIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjB6lb8/CrfQkQCHNlpWO
+bZMWSbTsG3rW/xRw/3SBxkSCA8UyQoGhZatvc+wKPl4B+L+kbwji2Qf0zlQo49V+
+P4Ms9hig959Q0nPmN4SQow5PJsdoaX9peHGgmZNFqT3MHzLiRWTAAIuYT+NKPtGy
+xUdpu4QCrbyIZzxDibiMMUfmAP4b4+Qwm55t0PUg3Leuzo9iCV9becl3uinh4hG8
+wVWiv3HaMZXMRQHEmikcOA7Op+UrbYnYhq1OBOtTHBEbCRH/b2yoOSeQ5kQKFDA/
+fmcyJkChh5U3U3/rR1WT1s8HzTfTjOcVLIbFyQy5dqpZYrFHJVgnxmXN6ijWSC2V
+MQIDAQAB
 -----END PUBLIC KEY-----
 
   Signing data for iphone_3...
-  Data to sign: {"device_id": "iphone_3", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEvUN1ByJ7cXRhEnNG9XsQQ/UMEgxtYZ2u\nFMSTSUgg4Nh9qJoAM2nyvDHZeZ26q8RDRaArFxChqeyzLQOCSa/tIg==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtvCiCl5Wywfsw5UBG/rL\n9LqmX+VYY8PMJbhO+ToBNN8IaXJggQUklpY1rv2waNXyW5gSVsv9vfjGRozThU5A\nXDB4dSBKdOMIzvzqeAT4GgCJvJi9XVF4qOYqsr5rIFmxOiZx5w818bsuC5a8fgBW\nfmlmnA9xL2ZkR39Cg0kngW9WlvUdtXRKOaKjzi7NeiUs2XvTS/Gqmyxrs/jIaicX\nTVkfm/UNks8c4Wi93RWDm06SVNm4JRhfZbE84PjE3fEJE4H3Eh3rS0V9NX3fzQa8\n/Q7vCi0L4motLiGFr/GhMietcQwkMLa0hV3QoSdbSrxHdv45LJgntXpoXFA+YIoU\nfQIDAQAB\n-----END PUBLIC KEY-----\n"}
-  ✓ Signature generated: MEUCIQDaKE1i8YTc5Fe/vmck8k/6q3hC...
+  Data to sign: {"device_id": "iphone_3", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAE9WsrgnnM6DL8AQB/mKLD2Y3L+IRVNHoh\ng5rDLRUpwpnhcxsZCN4BuHPvFApYt31BtvALqo0M2r6zbPO7JJbZeQ==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjB6lb8/CrfQkQCHNlpWO\nbZMWSbTsG3rW/xRw/3SBxkSCA8UyQoGhZatvc+wKPl4B+L+kbwji2Qf0zlQo49V+\nP4Ms9hig959Q0nPmN4SQow5PJsdoaX9peHGgmZNFqT3MHzLiRWTAAIuYT+NKPtGy\nxUdpu4QCrbyIZzxDibiMMUfmAP4b4+Qwm55t0PUg3Leuzo9iCV9becl3uinh4hG8\nwVWiv3HaMZXMRQHEmikcOA7Op+UrbYnYhq1OBOtTHBEbCRH/b2yoOSeQ5kQKFDA/\nfmcyJkChh5U3U3/rR1WT1s8HzTfTjOcVLIbFyQy5dqpZYrFHJVgnxmXN6ijWSC2V\nMQIDAQAB\n-----END PUBLIC KEY-----\n"}
+  ✓ Signature generated: MEQCIDi7aSWAqaer1IrKoys6zlVJkBSZ...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending enrollment request to server...
@@ -100,23 +100,23 @@ Generating key material for iphone_4...
   ✓ EC key share generated for signing
   ✓ RSA key generated for encryption
   EC Public share: -----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEwcOdffPCT9EoNHtaQtC1QsM03Qm0FhPa
-S9+fm/siC7Uf8Z/Lt6/a8CdLCGACRXnZVhXlGPrhFw9GGlyfHBntbQ==
+MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEFxSVP+NGCvgCbIzEKiFDNvx0s8abWZM4
+Mk6XMck+8P9wR04PUK/LVX9pkatahGsdJr7g2rYzBMYCVM1NpUT0zw==
 -----END PUBLIC KEY-----
 
   RSA Public key: -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4fOSdnXaT6GLEwKFCqA5
-kkAGhvRZpPn0TsoMIeHykjaJ9roK3nZjhuks6z7l7CAnkvINS2LzdVovASwbDLmi
-GLJu7O2+w0uE/j+nPnrr+rlnnuD1YYTXo+vW+B0YqV5GyRG/eM3kQJQjp10oII55
-tVsSWzvoFBaOr8b5fC4+90l6F1SdMLVIZ9X8kDm+m0l3k8mizzCP1jRGOfTaTXnc
-oNKm06wKqxpgMLdY0fZRsSBDwA6Sp8EsPcmECzbl4E9501O0MGLwu1lYjrHEctzY
-ZMV9xf6l0NscbXEM1Or7nVkYcbnTayz2otTfjPBlbXykImSDZ7+tbrBHp9L20Gyr
-jwIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3M/pGOgLHGS9NwrGMYx1
+MrlbsrSlcneH0LyoR/CB0sVe9PFbJlE+JkQVH93FiGRh4zOV++UyuWIIgSIl9v2L
+QTGXILDWrmGQoaq0HmAp9wDDNysCI4e6b0frgMOBh3wgdeltFWHtRi/rdEOn3BKp
+km4HHs0WzO505CPtjxYpafvKwzeDTSgYrTZgR+5dYC1KCC9YKamT/F+TUgZMmWHM
+9r9Q5gJ5O+rzE2IzqlSurPWBFkN8QeUWWyNBmcULRk6JiobXEmKIyu0l+Fn1tdHN
+JwAaXIFXdNu0NW8lAdF7HqtNiU3kUshqTvloggI8sjy2XJ276M4QXVf51B5xXnmM
+bwIDAQAB
 -----END PUBLIC KEY-----
 
   Signing data for iphone_4...
-  Data to sign: {"device_id": "iphone_4", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEwcOdffPCT9EoNHtaQtC1QsM03Qm0FhPa\nS9+fm/siC7Uf8Z/Lt6/a8CdLCGACRXnZVhXlGPrhFw9GGlyfHBntbQ==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4fOSdnXaT6GLEwKFCqA5\nkkAGhvRZpPn0TsoMIeHykjaJ9roK3nZjhuks6z7l7CAnkvINS2LzdVovASwbDLmi\nGLJu7O2+w0uE/j+nPnrr+rlnnuD1YYTXo+vW+B0YqV5GyRG/eM3kQJQjp10oII55\ntVsSWzvoFBaOr8b5fC4+90l6F1SdMLVIZ9X8kDm+m0l3k8mizzCP1jRGOfTaTXnc\noNKm06wKqxpgMLdY0fZRsSBDwA6Sp8EsPcmECzbl4E9501O0MGLwu1lYjrHEctzY\nZMV9xf6l0NscbXEM1Or7nVkYcbnTayz2otTfjPBlbXykImSDZ7+tbrBHp9L20Gyr\njwIDAQAB\n-----END PUBLIC KEY-----\n"}
-  ✓ Signature generated: MEYCIQDQNWH9vPbanpyOkH3lrv8SuTdj...
+  Data to sign: {"device_id": "iphone_4", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEFxSVP+NGCvgCbIzEKiFDNvx0s8abWZM4\nMk6XMck+8P9wR04PUK/LVX9pkatahGsdJr7g2rYzBMYCVM1NpUT0zw==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3M/pGOgLHGS9NwrGMYx1\nMrlbsrSlcneH0LyoR/CB0sVe9PFbJlE+JkQVH93FiGRh4zOV++UyuWIIgSIl9v2L\nQTGXILDWrmGQoaq0HmAp9wDDNysCI4e6b0frgMOBh3wgdeltFWHtRi/rdEOn3BKp\nkm4HHs0WzO505CPtjxYpafvKwzeDTSgYrTZgR+5dYC1KCC9YKamT/F+TUgZMmWHM\n9r9Q5gJ5O+rzE2IzqlSurPWBFkN8QeUWWyNBmcULRk6JiobXEmKIyu0l+Fn1tdHN\nJwAaXIFXdNu0NW8lAdF7HqtNiU3kUshqTvloggI8sjy2XJ276M4QXVf51B5xXnmM\nbwIDAQAB\n-----END PUBLIC KEY-----\n"}
+  ✓ Signature generated: MEYCIQCs8QCxH5JY/X2zOWA9RNyLnKhV...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending enrollment request to server...
@@ -128,23 +128,23 @@ Generating key material for iphone_5...
   ✓ EC key share generated for signing
   ✓ RSA key generated for encryption
   EC Public share: -----BEGIN PUBLIC KEY-----
-MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEX6cZVjRCU91/2Kmzfxp493GFHCPpF9Hh
-Rzhs00iL+kmQwTl0ca9JI9lmBXEXeK7UyeuxnMHLuLjcERLRuJGOew==
+MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAETD7iYtMbQ5Pah3vJbI9nEJWL/Lw2W7Mj
+CGcgcpijNd5F1Wsk0qu64m4x8rB20Zxq6qVZpbU6ydh71z1PRJWJqQ==
 -----END PUBLIC KEY-----
 
   RSA Public key: -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAttiB4u7ik8C7835GUUtb
-rBMRen+xI0RI/vuIVFuWh9jQLZ5KztUDjJkPmNgx5f4CamycFiCd7NwBu6X1SvbV
-lzw5BMwOQ6wfiC95ozzKfqswCwVemAF2BDMuyl/8E4pMumL5T/ywPkCtL4gBHssx
-aFlbkXJxdRoDcwlZ+ssSh7FpzeYWk/rR48o0xG/UbN2WiAHkSLQSSe6ipYXWzTMB
-dAH99Q2/3Q/GY/rYMiJlqcOjCCcRzqcshgV0IJEUIOj5+M34MLNdyycwxD7F/PvE
-QW7Vf6mHDYjREHzY7f/v8vD5D15RPn2ZAP6fY8XT4Jr963ImUFarQnJ8ilF/NJ9O
-XQIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3/MsrzR0G18X0tCH35Cp
+giV1px0IjSpqP49MQajyTcpSaOIFjvi4QtaHo3VsdAjXnBI/jp/NAgOKPIGONdVV
+xyCLH0tClHqCL9GqZX0GiPEIKT8KhlArgRHt05JRcHLJfdHyWPYDDRtYnHF4eb54
+SuMpHfWUdOffYhFHnC9NVRK7qj1FvRkp1f/TnVWzj4/D41BpWLx+uc5X/xJR2aNW
+coroaiVWZaPt8LWugHZBoIK02SAw/KDyQNXcBKuXRYt8dY89dxwaKfUOfqoslKpp
++DxxpsmHzx2kYIVkaLeq0VjLUr61QDj9j2yg7X5Z4nKzBlsuY35jbiD6AkUl2yFm
+twIDAQAB
 -----END PUBLIC KEY-----
 
   Signing data for iphone_5...
-  Data to sign: {"device_id": "iphone_5", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEX6cZVjRCU91/2Kmzfxp493GFHCPpF9Hh\nRzhs00iL+kmQwTl0ca9JI9lmBXEXeK7UyeuxnMHLuLjcERLRuJGOew==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAttiB4u7ik8C7835GUUtb\nrBMRen+xI0RI/vuIVFuWh9jQLZ5KztUDjJkPmNgx5f4CamycFiCd7NwBu6X1SvbV\nlzw5BMwOQ6wfiC95ozzKfqswCwVemAF2BDMuyl/8E4pMumL5T/ywPkCtL4gBHssx\naFlbkXJxdRoDcwlZ+ssSh7FpzeYWk/rR48o0xG/UbN2WiAHkSLQSSe6ipYXWzTMB\ndAH99Q2/3Q/GY/rYMiJlqcOjCCcRzqcshgV0IJEUIOj5+M34MLNdyycwxD7F/PvE\nQW7Vf6mHDYjREHzY7f/v8vD5D15RPn2ZAP6fY8XT4Jr963ImUFarQnJ8ilF/NJ9O\nXQIDAQAB\n-----END PUBLIC KEY-----\n"}
-  ✓ Signature generated: MEUCICdT8YOAe+LSLlqpF58L6Yiwdv0E...
+  Data to sign: {"device_id": "iphone_5", "public_key": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAETD7iYtMbQ5Pah3vJbI9nEJWL/Lw2W7Mj\nCGcgcpijNd5F1Wsk0qu64m4x8rB20Zxq6qVZpbU6ydh71z1PRJWJqQ==\n-----END PUBLIC KEY-----\n", "rsa_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3/MsrzR0G18X0tCH35Cp\ngiV1px0IjSpqP49MQajyTcpSaOIFjvi4QtaHo3VsdAjXnBI/jp/NAgOKPIGONdVV\nxyCLH0tClHqCL9GqZX0GiPEIKT8KhlArgRHt05JRcHLJfdHyWPYDDRtYnHF4eb54\nSuMpHfWUdOffYhFHnC9NVRK7qj1FvRkp1f/TnVWzj4/D41BpWLx+uc5X/xJR2aNW\ncoroaiVWZaPt8LWugHZBoIK02SAw/KDyQNXcBKuXRYt8dY89dxwaKfUOfqoslKpp\n+DxxpsmHzx2kYIVkaLeq0VjLUr61QDj9j2yg7X5Z4nKzBlsuY35jbiD6AkUl2yFm\ntwIDAQAB\n-----END PUBLIC KEY-----\n"}
+  ✓ Signature generated: MEQCIBDFpNCQeasP2mmV6+wt1PGGnnbA...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending enrollment request to server...
@@ -287,8 +287,8 @@ Processing shares from iphone_5...
 
 Sending iphone_1's encrypted shares...
   Signing data for iphone_1...
-  Data to sign: {"device_id": "iphone_1", "shares": {"iphone_2": {"encrypted_share": "pZ50E1giEULIGUmf1AjXO+CEyEWedrdEDlws2IzqPXXOR6gMw/1tN4+GvQbZ6C0s", "encrypted_key": "Ze9l459/p/6FmFu17/XAawsAkRjPdppuc4joZrKXLhropyVPCDXd80UEuCNhTW+xAEzBW5jCnm5hEzMN09e80D5yINY314Z7VExwQfASxW/Y6Z9TNjjFpW5FlfzKwTH6jfVHeQNgkYdakaVaJxmoUVn/Z+hOjk3rgeRiMO4oYNAye7KX+lZJdaMAh/+FWYapaPS3lQS+qsQZKddrtEDEfKVumzaFjVrFiqwytUJm00dxCBmTtTjAKsq6g57/dYoAPAUDKXEFb/rPmwDK5JIBMbWguBtAt6JmMTUl9KhL3fq2sgtw/SS8F+CxH2SgcYU5zXZOXZt8f4pD0I1lULEQQA==", "iv": "2dzhtiqDBVMDyF5PixJUhw=="}, "iphone_3": {"encrypted_share": "jAoM9h97RHlvazdX4VVANOOK0rYS0bsML5KZyk93hYSS2JdRTVftD1ecnr5AZEMY", "encrypted_key": "anWFGUw1Hv0Tcf4RpZR1M3quQUjlFba6pvHQWVEgxum3qA3vlnMXLd5mTfePgC63vDjK/Sn6X9HvnEfR4fB484jhuwA5LoxZHt+s4LF/Z+OaHIUt1V1CCmTPane/sw/7eE1d098lqRkxsM6qvy6g9jYJB7HWmVdH6yMa1gpK2e1o9DySl0K4sKSCxuSUt1EJpZgdTPrinmkEON7jsQQ1+cyaa71WRI7AvjCG4vf+AN3LwLQFYx9u4NygoV3NNM4sLecqexaKOH2x2taNyV0MYQdO1bqtJHP9Z/SlnneK7gdwi4AKx5w3EBCOd45HJJyrA71QOk9dQxQyuwWDwSvoFQ==", "iv": "mOXg8fQZcM9eS0D9xbu79A=="}, "iphone_4": {"encrypted_share": "EGf/h8A/frmv3Lz5A1IGylO9I2lsK3QEd2adbbmPMgwpTZgDBUzIApP7ti8A5a4Q", "encrypted_key": "yQCPSdVi2FHQd6tk9FNbXw8ODXQwAJxwPvZ5awxahxAUuvflQI0xgp1t8J8xZDE9NPI8A/phOVglbQYjVjFT5HgA/V194dGdbmYBPtEgzXmsd8APKLP8Wv9RnK8PYtheVs/7csi4pYxj7tH9QxfP2C7nOras9jsmrU4kG6RQw8IjaIgi8Bjv2SEcO7c3rsg6RvG7YJGWVNVcvyFwc/mwtwAM70LvqQD+skQ5rzHG9NUIx7++WoI1WM5oRYkS4uGQObTTDZNsQAYeyeHsLFZYnEiMEdd5eDDVRrty4T5mVghWMA2dbZKOuFiIEC+62figVPlRkP3BfbPdL87Hdk9X4g==", "iv": "q0h5t7YFVMlEUhzkvcyR7A=="}, "iphone_5": {"encrypted_share": "A2B5cZiAsLpcsNLtWqOBCZlqM16wqahMda8N9GKZRiNxgjkLz5Q3NB7oMSFSXjrm", "encrypted_key": "PiDH1/QTRL8NYMg1YR+RFs+1moEmfl5MVQP2DxPfzcgyBiTBXXqkh66kMbn3CTY8eWw5Ujnw4vJfMGquQJhk/G9J9lyy9imSQOFsu77ULKPXnXjNRgB75hgvQrTCFYkgAUU8sP8CbILjy341wK6nZX0gLTwNqWrmhl1bqbDZx7wGfEacU5zdwg1+GcaWa4eeSOxAC980X2Zh+w/u7D/LsQTOkw1gzPGi/T7TmzQM79ef9767MPmpIR/mwVz1XAmf8/9Aj8qHePoVYA2EhCmhvcsGELbdIdTj59el9s0AkkwT8Aqe3JYPKqk+WacKCWU+zoJld0qUkLxgFcNhiWqxiQ==", "iv": "wkLFU+CMhfH7FmDmYW71dA=="}}}
-  ✓ Signature generated: MEUCIEVa2qvmDYz+K7j+LdKmbrmdwymU...
+  Data to sign: {"device_id": "iphone_1", "shares": {"iphone_2": {"encrypted_share": "M+16gXMGJTypoyZ98YZ+KU+0Pv2su5jYWSw8IpYqDp5InIMBRAydHdygrzo5DJV4", "encrypted_key": "opLu+Z3q29ESB1twmUOx6+aRM9C1xQe3fM+dg5R/vHDcLICjOr0dr8gLWi6Bd9qwfglQlKrPoG71DgnJyyQdKo7NyY+yn1smSJSMr55KlJ5sRTCLW0RJOGy01kdVS4dcDmRUQJ4GEL/ZH2vaSoGhHgmfsrlUbRJm0a3k5ASxxv6QhIZLwbgwJ++EmSus40ufba+ZqvajQY7J4VuNMCOfTG91ornXeGCRYyHZdbGAaWVTq73vtqq4LQa1gM04Do4On8cho8LjxkM6em8SccPINtrAYpTErBXuU3+YyRwXBpnqwH9iP751J8fzTKp3Rk+rA5Lu7LvOxJb983ZFjyJuBw==", "iv": "rm9bU0ZNGx2YLvX2yNTe5g=="}, "iphone_3": {"encrypted_share": "XtOXG/VeqZPpb2gyKR6jONeGTNs6G064kzpV8dkvb8ukFrJMF/VvsGPNB5W6sfaV", "encrypted_key": "TKhNFz0OgZw9Z16t+4bZeJcjnxliiw2Rulv79nXh2N+YFCJCUrelWM81unUexlhxcxLJ9+i0T/v0Fs9D0zBrzvpAe1zQIJK4tO6huLqKGsBM5H288g3GtIja2MssLGNI4W25nrEQRo6tlHAPvaE4w2YLyYWoGQcFzAiG/4TtV3KEtVESTZLVXaMGR0XTjd3eyMIO5pVdZzAgOUqa6D2XV1TMpcG3KOK3RZjS9n5s91d9Mqqj2KggIh11HzzGu5tF1R5T3W/5m9A4HSM3HCzr17W7JTnBgXuO4BXHZYbFoipYO68qi3E5VkTcfyGtWrQ00G/7vkEO0IWYxHz8cLmWmA==", "iv": "7VQzrPQ41z/EgYRhe6Cw9A=="}, "iphone_4": {"encrypted_share": "J/GGfFRdcukt+orfoQ6As6iKbv/yv9OIkhDomAaTKsUQBjGY/EXkSZdTEXjozC9R", "encrypted_key": "BWIcFU7hu7ezQexvqdgSfh8pU3jBbmlbR67fQ9gXy3im98zXSvEmZYk7Iz+MxmLxSVoPjyLmqxwt9m3BfsjFs2SVpNTNCq4TliK/xw7P2vOGbvuCXSXiF2BomQ28z/EMRzCRaGif/xjWtcLxFadH2BA1XAm0Rt9C8GNOegh2IwJixstvSN/xSC0pRck1phV7HSOiWsFuCspYChLebcIie2LJ/AOA7CoiHrwCsn0SSWdDVKfOhdqerXpbK/A3YPOcfMZVn3fSuJDaeFjBQ+06JaTz+QGo7BwPzoAWXFQbVr4MW5Hcy06J3St3ZI8bPxs+DGE7obEMzJP6hC+7O5PUvQ==", "iv": "cIvvsgMo6mLgiSLqaEnL/w=="}, "iphone_5": {"encrypted_share": "hw7EbDUxD9GRG1K9EvfDvRQeMwe0FIgMTvlpFECry5eyUVMnehl4FKCkzV/p5TOm", "encrypted_key": "FSCNyp9IBlE74SJaEjwPuhz/TSxazbEwZO71PiOck1LgjNNm7LXeGqxBMnF7HuPbSDc7cPeW9iIERjrUjDBA5wg/g/3RUVtFVQ3XBUYvhcJF4llf6AUZBczZua8XZKmDnY641qNVO3j0NquBoDkosEz4bZJu6rNbWOdTrKFcRpDwbxbCGpwS2obGwr2Jqhdjgq9ePxEXNMHtuVNwSN8dZZR/n00FJ3WF0VeTqHKJJGyAdaGsXFddjoroB8bflG2/3m4thp7S6ggDmrG+KcMOIGwKmJf9IfMhlFmcbtxpy3yBgD60DR28qOV2HHqXe0usIE6F/DmQjOTiSgBNcHXW5g==", "iv": "jz4UFbAqk7tXGdaw+GYJkg=="}}}
+  ✓ Signature generated: MEYCIQCc9dQ/kEPwpMqTRiVyJsEUeJWX...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Server response status: 200
@@ -296,8 +296,8 @@ Sending iphone_1's encrypted shares...
 
 Sending iphone_2's encrypted shares...
   Signing data for iphone_2...
-  Data to sign: {"device_id": "iphone_2", "shares": {"iphone_1": {"encrypted_share": "mescwC9h8hRnl6mzCB2UY/DBLyGEkpOSKhfrGEo3igIZdkSnkpI5tvQGcd/9SzmH", "encrypted_key": "SlJ+DT7h/RFL49MG1DwyZmcFDsJirNGTF05bmiNNxwusgzfpXs+rB3fPtT6pJ++NUl1BU6Udx8pBqXiX1q45ypToSNJQcGhjHgEdgXA4tMyyu4tq/coVN6eATPcMDrZ+qPGrg/SG6qOOFm9bmrJAKA6zNUfwtXA+y/3Hz+QY+IT8/GYSXpJ1MmD0/E1uuCaZJy4QQU3yM6nWFwowPNNUKPuHwwYXOvcoMTRxzVuhAG4IsQQbIfa+6Zf7+M37+oTWwhagQA49zYhot5kTdqsf90B3Jh3wYRJWNy95uqfB68egzjNHiZDDwGKxYx1pciKFTx5a4BEojca+gcLlj7Qy5g==", "iv": "a1V8CkDN7rEOadxOsEk9oQ=="}, "iphone_3": {"encrypted_share": "Cpasnr4Tbb4zL+JR/hEBWXW7WKc7f5FbhPXsnSxT97zsP/TKMb69G3F2i5ea/r1n", "encrypted_key": "bGfa/fVXv2Gqw1ipe19WMQK0ZXZ0pysQ4FMYC3UquehQOtvErVEtcSKpgZf7EkIZpUXQvkOC5JjFC0JOnDkMOLNghTftmHq7QSToIHQ9+XoMaifeJlLwe/kN4+L6E6/e3AFUWYCnTPlMNsuEqZEUAMkjqoVdfdAei4fGWCJaAHHOobLioipULh6wrSx5jxc6rSoanqKnJDFnTqTivmlYJlthMbASOWfcDAmF3r2g7bYFwOcX3YLo+p/PkJK+k0+fpnEDfjjU/Yuj2XTek7w9W3Pt/EvNrhfantZwidc52YDlctiWJ/WFb7AjTpbptTdOYoggW5sVg0T4BNBiqXP+/Q==", "iv": "M2z7CCp4bT60ZyM90IldWA=="}, "iphone_4": {"encrypted_share": "pvcFPfboiGxpmDJN2+KEIcjW68DixxUQwK23ngdJYdw0EHAlwMaWLw7SiFsHmOqE", "encrypted_key": "2xANSa05SdtP4tRJR6+S7P/m2klQQPCeUyNOjX1CaCVNHCjaIb9/VxupQihFD26DnE9yRcQ0vXtkn0bhU5n6DdDLBlz8n8eALuikEH/3oYskVIkDuRLcNHnfZWK0VzqqY31vge7P2t9BWSiE+WwOIGgq2w+ucePCFUHbKGjtvafdgTyLR825m9IEeiGbcVWaLdMG+6F85FCxjbXpnqkiw/bPL0+F59tSGSTjrs58hnNITT/y4oW2F0gpkZW3jatdb02DM/hHETWTCDS4IFrksZrs2WvaOh15t7BQgaoeQ+kdvHZIYLRpJQ5u4OWt1B0UMT9TLdgDGwipjZaZSn5CIg==", "iv": "lAzJfd8cWn3ToJtRbJcOuw=="}, "iphone_5": {"encrypted_share": "aNWfbDx0n/o3A/DfvnYCioPYOk7EwgiAK4iNsgkVDeMZczja1Ncj8zvr3G4A6p/v", "encrypted_key": "owcgZcVtBhpEFr36ldPWoqhPzWEqVK6hD6ERbwJS1dHl3iCCGZNo1ZJ09PEK77kJABrxR9RyUYvo+NNWUwhohHBq5TaaQ8F9x6mZWKQ/Iz2R1Fxb5lTbb3fAzWgC5bYdxSrM5PYUGwtyVXjr6pyBxk8eLGf8JXg2TlQyotJaxeY3LrS1e6NT8+maTz9i5I9OMzpGG6adLxDM9BeAAHvdhMGmVtVHo+yzJ8euedVqDV8nZHJ2n7hCpBdkL6xA3yNby2RUKr6lnEknTalTTk+LszF2eb2eZ26pU8fQEsOmOr849Zp2j3zQA0GhRrF498OdRsP3wzhu8nnBAgGCPFHPKg==", "iv": "Tj6ho3B+5n3fc9aAyU8c8w=="}}}
-  ✓ Signature generated: MEUCIQCEUFgi1RMGWoKQCNIdg1Ug6fFi...
+  Data to sign: {"device_id": "iphone_2", "shares": {"iphone_1": {"encrypted_share": "KOhOWcfFrWj06XnBbWCPNYT92qnCfbnVda+hvoi2lWtbvRjg6gss8DsJo+Ehq9LG", "encrypted_key": "OfjEYjg/q4QwIad65L3rSTN5pnZMbIFy5umU+BHAgV4ThodJb6DvYlZms/PyEjFgN1UwLqx7KYpGX2iZMLZH8g36PXsFAynh4Wkc/WhXoQD4tLKOaTmnsyTHKodGfLUeXCZWlpry5ShojVHZ7EERQvaRMYSiP64ZFXCknr4RTdlswW3nFNUNE9sbaZaDQSnbN6Egc4LLX329Bgzt+hN27KXi40DMaQtQqqGyx06KLra9ifUn9gSGlgZjlwIoQyODRv9OIchJW2vJAyTcv0JLGFWL8/HJDHfGaVQeBDkYoEund852wOp+AO8tNzT+0iL2LdKsdxQEXLlFCcppTVBNnw==", "iv": "VXOE063y9B7zEo5caaZKEA=="}, "iphone_3": {"encrypted_share": "ff4sgCyLGUeEp+e5WTd/ORnbYrOcR5JBZVdgqkmfM/MH3driQ5/maahgqSX+JGZY", "encrypted_key": "V3ndvFZHOePMz5Uki+8ZR4CYRc6RCypGWwWhmT5HJmzkL/F4YRCer3LMfyWhuS3+ShSq2OqQenhy9LBskK+eGnUpO/mZiYQfHxacjrO/5OaQwyatj/Isy+FLf7Md/+6/odSbUsHr2LJA2UC1epW5dOApW6dMukq7YeiNvew5cUWTg/wsfc7hw3HsFht4f8iJNJk5tok1M/iziCt2QkdJY96uxm7d1EAe1Fe2mvhnLDK6vU1qSQ1fxAIyut1d5pFaFD1zc8wMog9PnYTgekFOOMu2wlYclchY6RXBtTFW5aB+bgzuSZ7DElFQVGKDH9wZP/g/6OIwcETpCSLu1pGUqw==", "iv": "3nmr7+UZkC8Gc0ed/RnhxA=="}, "iphone_4": {"encrypted_share": "IDA8hx2UmhapxttSk+tlp38zpczv2oiNVo1U0PlblHxIzQL5vOu+ieaAgITplu8e", "encrypted_key": "KMvbIRrQYbpVKHNZR3ufuEjMWvH3F5X6Nlp9UHvG41u+FYjmRJKoJfg0oucMTK1pco+bbGb+HCQsQtQYX8B1v6PBbROVJe4H1A3lQihat68RqQYEJKPbza7m8M4U0ay/6XykH35VbTH7I7KZMrwWlsv8qaPp4rsQXEuRGJ+6J8s5Jz3XLjnAoGeDVtDHGIWR0ewr9+gitCX7ZOfbjEuTi6o8EYbn0vNhLezhitD5R8Altd1lQ+93Kq2HeCExd4iCso9waDelSRzEERrVX8Bc/YohLXosYfEe0OtgZ0/AhbTxIrmiBW4ENX1QGag3mm1u4fjOv3OtTp3lkXaihDDdcQ==", "iv": "HSuBKwPZHmqY0Gcw6y/0eA=="}, "iphone_5": {"encrypted_share": "TxRh4vSQlppAZqX1MF98ecHC3Z2ZALpOX1XprY+BNVP8g1DEvT/9WhsrhoysEDKJ", "encrypted_key": "H8v9IovzrNWGZQROiaeN0SRGq3vNzVSSrUPIq6so1wNqC66hHHlZsFTUqDLZ+Ddq3VcxuIzTwZz8ZFB6dmcCq9z2CTEFGJvui7tYyG289Ov5tYU52sW1ZGI8MHJYWxyNRFOmlyfFbIXAtSeTuEOkgDPhQQPiK4W8JxMsRU6eGGg7ZX8N2fWzBj9AdQAFeJP4zxk8Qr/0f0pG9LE/30jz3vC8sansZij8i+dMybIK8CdzEZ/A3f5Nm09r7GXuiqtLeEvasMNl4p4iGZRCBkCdMtXB9okARn/W7u4FQh5rw6gBhJgbLUdMYCIn4AdL97KiSs5A+HNkjZgibe8pDClmYA==", "iv": "tyL+PXmNcMrbXUxPhFDX5g=="}}}
+  ✓ Signature generated: MEUCIQDPdm4nCPGsGfb+KnUGKHp87sTr...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Server response status: 200
@@ -305,8 +305,8 @@ Sending iphone_2's encrypted shares...
 
 Sending iphone_3's encrypted shares...
   Signing data for iphone_3...
-  Data to sign: {"device_id": "iphone_3", "shares": {"iphone_1": {"encrypted_share": "brRALX42yqPqNmL2EgKfjNKKW1j1YWTdyKzu/puRF/xk/1V1b0X2Lg+04R6M3NKL", "encrypted_key": "OVyvWga/AcWa6iVQpML8SaieVrNrsqvvjcQ09cJUiwg8xo3crh6m2EIi9cSY5tN1imu5+8H9DGwvPxV8zqBXZZJSIvv9gHUcxZfQg2pR2kzir9mAwrbL6NM0ig2BWxsfig+uF1W6LdsIv6+OrE/rc+vS7nUVK8d229pGBG0Oq9EiJZjb+g2erPM0woFV+hjYjGzK9nIza2btRsLXPA7y2YCdfrjMtOGE4TiJnXazyEBjGXDP+VpAjAHrZ5pJLd8AbjFX2SLo6Z/Uaq2X/DlDWm+9u1BNv+34qd98vtpRwpEhM8THcKA4L6zXNLGqILRBsRtXuahOQMo1hpdCub+jNw==", "iv": "Ad04JOmbDNdIJnTeobXa1Q=="}, "iphone_2": {"encrypted_share": "d6mZmNj5aRO6FYXNzCz5BGTRykvs5uTDnyvy6HRL8Nam97jwU8mPr3hQKL0C3djS", "encrypted_key": "OfS2L3d0rJMU2OMvUco54uqS4REF/1ImYxLE2OrhAEKPa6WJZZ2MUyON/OrWGyJa+ohjmb5WCCGpLpjmxRKIzrT6laco4SM6DNMnE6q/vtugEjeq2ftVZEakKT9ce6eZKiqzJwkR/n2nTVpbkF3URIq6iMjL5c50ag48DrWL2umAvYzdYOuuJ20VXa5MOYmqnGX+Kk8Q2gxx0ygk3MvNH9bW6PURuqJoXpJ/wqQ5E6ha/JoKd5EpfNa/YpqBD1wudMYpafHPoWun5YWkowiik7btqWIf2umpWTATFZml6A/YjoxiMKSuLp3l+aEKOGFe8OKf4T3DtkgnLIrJjhB7BQ==", "iv": "snh3Tokw5SVfadluuFqwPw=="}, "iphone_4": {"encrypted_share": "3QC+4rvPFokhffU55RzJD3mcy+6H1HSZjAD6p5USs/v7/Om5zoAePhQrVEScQc0h", "encrypted_key": "1cyVCfsI+ZW9HoJSvqKrPvvjLWsjqyANI33QpdfTRWEZPmd2VYqf58QuY516QYkF2Rdn4trs+josfLn5cp8Zg8EplpDPsTTrn6FbKHaHH4LDAVTrLoSxn4RkF4WS/ffGgy3TUFd+q5lfxFsiFFvVNZ+zl3nbLeOxyRaAq4Iti630YnXQSDd+596tIPEkGYn/EVn8zmsMGHapjYW12I0xa9Odsesbr7FBwPaW4kX9i1mz6dXGOazaYjBtlIHWIBUAm4liy9pooy45FSXu5Fi3AZ5nJfwevrjYpEtlaSwsNeA1Yd3Zr9CMKDa/iJjK4Eq1NiQyWLEsny1HaQj1cqPUWw==", "iv": "x0QspLD2P2HfFseKnaLf6g=="}, "iphone_5": {"encrypted_share": "1EAe9DHf4j//mMlxQ0TM6xkScqj6l95x2MuRsIf9HtPM+hFw0VGSfidpbsp/j7p7", "encrypted_key": "PXAHOqihSvIS6DDd3roaOhv/vJr05qTouC+KZ5KrnPCn+Zg4PQlI9tiIa+ryXk/j0h3f2g1vtA33HrZinYLH/vMQgaqPfKzhtFNALkF4Dmmu9vQY217HVgJuM1CRZ/TTdebdzOAB8pJn/+1KOo96He7xfX06XG+tSjeE7io44u9zZxQqfCZMog1fCz9JnXiQ61NMtrHzchIryEEDtN3hs+/9tihv3aQn5jhFCBMAC+/ufIGbFAB3oVRrlD5MJVciZUJ6lwJHUdCGZhWqj23lydq+8WniO8EdXhyVr84RrAeM6aqGTce3uii1nYP+zI+aJO3n8B/rITGo0qxZOCe6SA==", "iv": "gvuZp5dKLV0ZlWzLrzIhcw=="}}}
-  ✓ Signature generated: MEQCIHnfjMqHkYmA0i0ZKwZhEwXsvbtn...
+  Data to sign: {"device_id": "iphone_3", "shares": {"iphone_1": {"encrypted_share": "JkHrXMSwuxZVU24Fx4j0L5F7RKnCcAaWut9c4nhhGEyxxIyB3AOAX5W8qw+jQ2MU", "encrypted_key": "iq+YjUmn/KmFeOQ1uuvKBezeUs4/12kEoTDJrM/ySs11Ek7nEvRQk7wuVY2C9mktQsSPS6XzLP4hEjtU6+irF4SYB8RISGO++KC4wHuB7P/eRrlP3z+IVzrgWsx2KVUkkWoJvV6ZjRd01IH7SlW19qbDsOuMvSklM8uAnrqw4CE/i5LZ1wN7rfUpJL3PfPOJwMhYfVHunFstefb7sk7sbJIE6a8mTWn2N1rAv5nki81jwxjnAkbbDSL22Y1SUK7fMEWwQP+V2ZNEv309NSq2tFldkEY0gQWi+/9kXkq9SC8p1ROtSzYEmL+jWO6QSmnTu5mrDHBfuOeUz+An+7kbvg==", "iv": "qo16/EfiQ0XinS9vkqD1rA=="}, "iphone_2": {"encrypted_share": "nIoSdA1GEBAKf0WnRLRDH6ttyCDYB7KIBnfkpPutwd7cxv51yCjNYfvZmvUdCyrs", "encrypted_key": "P6/T6z6KWthW9fowqK5qy6fFuxPlKsYulgEn2jKCIsc+R5kPakQ5tdqZL7dg8cJIVlbr9DHiO4wQTyg9h6++G0uUvU4M9Twh6oPN3LLBhgWkbqqZ95xn/acVtUtpO201stbqI7hXBpfdrfCsbrihNwQH+j92rOfWOwgpUp5XP3noj4XipktgsGM0uBXJBZJhdzrCRgViGwHW41/QXtEoB8eK7qpL8XoruOWRKY1KsrPk+K/lrSwpgdKLcHNJgqBWaSjTvkxGne37yeAWA2RzXJdIn1MdKh9LoPAIDb9a9HDS9aPLveEXEt6UtKBmNfdS9JjgcrIRX6DAIloYnfHrRA==", "iv": "BkcTK+gEl9M16s6L7ScIQw=="}, "iphone_4": {"encrypted_share": "fjPvpeXZFGksxPPlZCX9eJpO0f7yiA9MzUS4TTurBBzt3qwruTyeifkHRV5lOCkp", "encrypted_key": "zllqzQxqSniXkDfXtW6DqDZ/FyZJt88/7toAdbvr7HnP7GAjP14JECBUh9kuGnR5/O5KuKkZle9v+/XS/Z5G0+41BoNINuXiYTROcFwmkPXXFhenbYWeIyCl49BF1BOBW6zIYqQ92ckzkGKAGfJS87/WRb7gN7sxUJuijKue5P77ZOoYheUsFTa0vC7ElylGO33qi2wRvSmZnLPOXR1Uv9iDYX3edameW+CacLKaeY9nGDXiBvUHfi4bavcYTy+k11EZcPIMrqM0cq7g7r3syC+/vA1U+flmGPgYLOyT20e1OmV6VzRAeUoP1NA6lYG5R4t9zwzpqGLRQ/9g6H4Hcg==", "iv": "BdBtLY53UNf1kRloM1kgPA=="}, "iphone_5": {"encrypted_share": "F85xXTVnl0ZHTs1e7VlwVBKCYFWKfCKhZFYA3a4Ek9u77bnlJ8ouFHKXxcDMcL7g", "encrypted_key": "OivZb24Rhd5f4++6WmwPPUx9G90VhJneIZZHkpFie93SY8/PXrr01Huwj4MtgJ+xWhKiE1uRatPhJtiPx1On5WV34KXkJhy2ANUwHPC+0k3LIMi2VykUd7iCSHK4j8GYVC5FQsc/+F2fVXdspv/J3PhmWH6UweHlZEMEGYuQ/3N8mxQhz6jNTL75haDLUGw+x/5mWGHX9XPbcFMyx5OOg/z4JkV3u1E9SonUDRpVX8kxV4aZ4Ae1clZTPqcnXTaW18KwGYbdEhv7N+IevqWRGBVflsC0GjwyxsKaoATG7LhhzNfBlnLzuHQVyQPlpLXb75zzwx+DqmRwe6ww2hz8oQ==", "iv": "c4l32V9oHPOOm6J5UY9OZA=="}}}
+  ✓ Signature generated: MEUCIQDCj0gvhbZW2WXKyooolNnLE7jm...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Server response status: 200
@@ -314,8 +314,8 @@ Sending iphone_3's encrypted shares...
 
 Sending iphone_4's encrypted shares...
   Signing data for iphone_4...
-  Data to sign: {"device_id": "iphone_4", "shares": {"iphone_1": {"encrypted_share": "jdpLQ6bdyLNwcyovEVrmV99Hcv4PcplO8LeiXEKr3QP68+zv9QvRBbnfsr5D+6yH", "encrypted_key": "GxNek8JoWKOm83Ca+ibSn3O5tcTgbvURwJJPmV954V3FalGiAl6mm1+zWO4Lw/QH1rrpv17g57SOkehWZBaSfqkhBrSLV44Cq3pq0UOvVo4mCcfMaUYU1V7qsdbaR3Bwj0sPxDGK5nQiq4axrwiJ7mRFuNlafRizFpq9ZrCyODmzSSpWTILDWco1So2TVJBQEbCfSBO7LrjqJh70FZK7iY2RY9Pdf26D+ITgcRAPysMJbyzMe0KLWZblgxgK/nwe2aHFGnEOuufe5c5ckIoS0ZQCZeWX2KR46SlxQNlxqWGbv50GS11wEY4FnS050Vt9bGa2c9qwHIi8AjAl0vcTkA==", "iv": "mSL1ZDTMpUayLS9GaTuVgw=="}, "iphone_2": {"encrypted_share": "WWhsJTmcJqrvU/dyt0eO++qgxGjxH3GvEptEoy6r/IcWi18rK/qEkw742hlMtGGn", "encrypted_key": "VXNRjfrwAwla2yslwUvHxsb+KXKStzrLsIXDFb06wGWrvTwVh0cUUCsodRgSOxuN0TXdUqswx//46U4baIavaUZ+hUbDJN3XPfHuXnjTWmbecuM47cgltRkJey0rV79MAxIEyy3RSYI90MMgmNCV2UcMjspr0QqGDAbD5qaHPvCrwWeS8pUuGXEfmRWNLVt6umt8rsGKeNdCZCLLdFgJkSxIFfY63EJ3NHfLPDVosmH417u2V0EHunTlFqX2ezUwBncYkrdunkJ2b0CkrPgPZlG1dTuhVX6AVdKG9zYzwoRsA2TSVh9MUFm9wnQASaglnkwP0mkuw13QEjwxuv5yiQ==", "iv": "J7EWYxX51C9VgiA2gClsWQ=="}, "iphone_3": {"encrypted_share": "X5Z06mIaC9mQl7qVceejI/NEur3SsIqaed05CZMQrquIXsBDw24/4TyDmRLAmogf", "encrypted_key": "Q20aV5NWCcyyaZuxrMJSgxlmVt0Y30HyTNfgHnp/oDjbmr2QEJYzIeLLQo3Vp1YXZv8xegt1MO+zdvb2E721xMBYq/AWPCDpUwmVOsqqRFXMQdA1z7eb16841V7wdpAQEYzV1SNqkf1Svc8anhCC/MHeJP6t3KZDyPkoDm/p5n0nkMuFBgk4Kn+bTvXR9ScaAXY/sd3WMcVkgS9zBVaPbTCmYHNKBySC6BEgt0WaoXDmw0wI8CrZZsn3HkmZAZshHSWSILU9Ck1jy6fvROJOSAbh0Bd/3Kb2D6q0dX9Gfq4Dsw/Egkh5rnKVwirq2119BF85qVCB6y4klJm6V2wznQ==", "iv": "VOrya25W6XeFk1pN16RL4w=="}, "iphone_5": {"encrypted_share": "YidTJ0NBoT55Vx0F0jNJ3n5uRV0QR5GYLGPpuEXFFht+wuS1UAVRe9Q3fG5ghfBF", "encrypted_key": "niBtDqn47I8ESKfkJN2vFeOZNIVWetGBFfuNyofma5LeyZQDA5//ov9ynNly+U7D86pqMVofxoVL9K33s/MLxwSr45D5T3rqHMvmKZ0IFt6qkT69qjKXTtiugm5CTuAb8KW/xLVRwa2nD7kTd3q0U/cKMTTOlpvUVopMCDrSGFihlfoQp8NQWRtB6LH1c1PT1/yuWA96HOyg8vs1lQSMA9d7Gu9y8gnLo3gI5/b2hsPgIJOtLaE+38uzkEruREk5EaXJZrlRSBEfv8caZKwlRdfrFPHgv5TtkzdmbIP0sNcs2sRgl6V7xJkz8WCoLJUSIvY2u0vQg429KMrd7p3/KQ==", "iv": "sXOQMwKJ+T9Ypv3juLQNng=="}}}
-  ✓ Signature generated: MEQCIHnkGyQxtPuYLfCQi2DlZYXHikYA...
+  Data to sign: {"device_id": "iphone_4", "shares": {"iphone_1": {"encrypted_share": "I56fCf1V3cuaNvtNI/86eH+kfZ199Ka96uTvMbR9JCfE3WSYbHu1UA86cTjpx++k", "encrypted_key": "dBUobOchiWmAiCHVudKigEowZ88WxDVOKCHLYL5lMQm365kE+fZP9sV5F8rGgwg9cnGqzpw6Od/WkaAX/fWQKTaLAHzyHTZY6vWAKpHmg3wR3syQjN5BIL+mB0H7ikYVPsJDQBKpvsQXzcSTFvAZR6Q2vuVHxsdl+IxUY+o+TRcEQtXScdtW+pnJuUDKL0COtam0jKr4OuF1+68FWHRQrCHStY0p0ReBE6w/P9cip5Nw6VLYHF/yYjvtQAl1V5XJswZanM+HM0AinwkC74G0G+z5LphmaNBPSpKpMO6HI58WYdd3E1EJzSKdsRFhIrypzxZKan1b8W3A3D9/I+eGEg==", "iv": "9fW0uGtqH/c5d2fIBTdBBw=="}, "iphone_2": {"encrypted_share": "7JZJA/z9Iw6CBQh4qmKxoRGDnFXq04MXWYOLWrCRunU5xQjwS6yx3F9IMduXqd+L", "encrypted_key": "LMR4VksxbXI7vddnm4z2ztaweXev42f87UnvQCJRqilEoilFIel51TjPkZfrb3mjzfImvczny48fBVWFT6rjZTWBKLTmg0wJQS/hYaDqDkF+zvxUxX/MDIhv86NzBpFrbFqUtryT0pePKmohNntZa5kk1LLAXwy1gd7AFVMV/4Vt29uqQy0lFEEyjHXMWizcy3tPeRqB3B9xatNmPHjA+g026aZBvVeX8pY/jtFu/Ir8pEanKnMUjNS+xRMXGl0Xu4VgFr9TaUOp+SBW2RfWd4kkIDMvhIkI11SBgcn6Y+PscmXoBax9y3CuvDIKvHZxPOJ8EIK6PQNgy6i3yfI08w==", "iv": "RgJINp2NqE3TeisUlv3u/A=="}, "iphone_3": {"encrypted_share": "JB1FZ5h2rAL/wfHZYP5wXVJUPMV5sVHHyIlZ2+e9fGfYr0Swobnyo/CN9Zb2MwjR", "encrypted_key": "UOe7KD98X/Vxtg6jnHHv7PP1g6EWCfjcjIE43F/+sAZ18J0vJE05hpMeQl83pm+tTsk2ETttr8QriOIaAfA3ZsVu0Bv6+70oPiaioTLJHzUszinmhENwkLnHHhFiGIVzupLm+qyQ25RNvRY/MagqDUJeA7agwIzUbZcUhh3T/TA0riHI6eZ4gPsonYpQqRlcSJ8dKO42Vjh3ub6ecHRlbsarmXdH5Cqv1yNKRKjLh3wTWlAr5ZKsl4/caovq3RXChZeuZ8LHp2T5PC9VQKX3ftBGjDGMNKCQhMwKuzow7g1plMZS868Dd7B1czoxd9Ok9kE3Zkr1EPXoD6uuxebF4A==", "iv": "0+jv/8lJD6ChnJbxm0xRVw=="}, "iphone_5": {"encrypted_share": "ZrvrnILsm/D/dRRZNJSNmX2POMT87Wk6dmd9u9skREKLJoVk/5LyvKlTB5WUX0lv", "encrypted_key": "XxQ9Ci/DIOpnOoDWPAgYOPmtj07pUNZrvjSGo9K6ebUCfVBXNiB8qhidCEM6vMCt675jzPljVONQBn+kF55Kn3Q6ReKHMNDpxlt85sgOYDYJOpHMuWwYgCszpTBEt7ymjLxQ124IEQ92ff4cjFMK3P3R2Ic/uWZs/+e6VdKh9MIG0iSTRqknQ4CRR0823Xj/QElMB9c75KJPvzLJ1gC2qw8CBEiO+7SUa3BgGFRbYgnhxlc42wCrijBCUPGMifXF6Dp9Tg8WUJzsSbB4UhNl8yCPqR72PnZTVW5hZy7NNjs7vKAih01WcoWhtdI1/Gt/hzq4q6QVBt3xO0XtZh8nGw==", "iv": "vYBhqRPxSMNWAM1gMVGXIg=="}}}
+  ✓ Signature generated: MEYCIQCcxgVSfmc+96/kSu4nkaOmfzoT...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Server response status: 200
@@ -323,8 +323,8 @@ Sending iphone_4's encrypted shares...
 
 Sending iphone_5's encrypted shares...
   Signing data for iphone_5...
-  Data to sign: {"device_id": "iphone_5", "shares": {"iphone_1": {"encrypted_share": "dIWxVDAOm6u7awNmrxiqt7JFXgeOqnEzU9i8ImVPr4GjT7F2I9/eN/b+W1aulu+f", "encrypted_key": "PszSV0UXsRQyO9WCR1+GCTW/5Ztph5ABmblEbB5PzTNnnZRlKyPzUB0ehMGPA4IULfaUxsZqsF/YHLoSkDFt+FIVhUYiln43pzzMmElHDYDa2eAoBAXkNYbx7gw5JnMqeoHna/RejatqtIxJQN/qLvXea+kaR4ag5ttICIsTAX8xAdxz/QFD9bemRmYX+gQ1/B/rJm6gGk6YzpqHPcJ7IVWslOSrOkUvn9Nf4/51dHBHlxjsBQLrwr2rVxclRxHzHdB051YFIPXej/NGxMic5bp44iNrzT0fGRVhT7DBv8T3m6dClYRUP/aITI8MdH/f2aARSixsZ7TJTJenJj1WBg==", "iv": "ZfcdDR4FKZl2u3qewRUDEg=="}, "iphone_2": {"encrypted_share": "RabRAz92h6fg669KlSQ3TKjuej/xQ7hpuNja7KKrQGwM6GXOSw0yS7dUHpKx2PQW", "encrypted_key": "gqkFLgjWsz12WnQ/5LEGHDipQTEjm47uvtMEi9ZVi8epRSy8OjS3zSKEcXzeNrXEyhb+PE1R7HLV98FlgQG3whBzaq1vzz9UpSa91iJoQmQ5xqFFz5N546nQIFexS8Bvl3MyWid6gHbZeaJxVA0y8Js5Dkez6y61t3QruAv6Km+w/sQHlh/Z4T6k33k3GOSjNyAgk+4p0wxo0nEWBmWpKST9F+F5N7XN03StRQnrdFxp++4/dXlSMYJP0/GBq6Ujq7L6PrwMm4HHD8GdTgkdPtgR6LL6kf6rlcmCdpaYofaHKMXj7/CyzLb9Ii7/U1meBIgSFIzY+SBUnTTPeqPq2w==", "iv": "sQU2jaXasTXVnuTYM7UAJQ=="}, "iphone_3": {"encrypted_share": "5RpldGOvuHmWn8fgQAkUi9bEvn3pbc3hau02teWphPdavdbXfJ6Y4d+YaMk7XFuP", "encrypted_key": "gyjnjuDTsNIsfEBYqnRVrZhsBd9Q0nJOu8BwGPw5QWYeDfJDhM4dcBDCQ8WN17T6JCkIHpPrJRS5sf/nm2h3M4E3XVNGS4iKrtVOZ8m15APfLCZnId3ww3UuEaKHDsHzZ7dCvJ7RW/jj+CfmA/bB2JUyXeQ5WSoc2J8rkkZxWeMgaWhbDU9AwPU7XF8ZMxfPGMcYcbyy+kB5VrTk7JUfP7Nz1PZ/gXOz2q5brJj04oJHStwYqAnJJ9qFiOzIlxnzMxv0mChl+nivSiOtNJA08h87v3sPeA0Z09SrcdKNVrlBXtc/8EA3aURuLK9Q7St6YN5gxkJPH1oYhTn6AWTS5Q==", "iv": "VeCzVsZpBY6jw2XbhY16HA=="}, "iphone_4": {"encrypted_share": "P6O/UVfFFp+j57LQ3x8FZCGdU1v1X8dWDh1tdDxdfH1pwbdsTuBbJeeYQSJnRNJz", "encrypted_key": "F3gDGHsGhHvmt0f/HmUaxsEvHhdrXGlbkLne410/SupS5NV9KWFRq0c7vyYu8sPPmPC5uqT03zw8upasjXNkKTFHqI1tqR+Ftcmx2mqx6WpQkbx3EOaqpXf3Zx2xUBKBq1jv6C/26L18bpAcE4Lm5qH56Qr4dxpKndb5yxLk4VfmJ415S2jjdhOdJDqwecWR6mjblPvywU9FE8/4Pt/JS3JUxZ3Ik/9plnLiK4VjPsVuOFHs+vZ1jYBDQ2usvyeVyCSEI8kEWmkyc4Yd1Wlj47vCdEkp9izhQEGcCxT+Go+56UEvzJhpLyz2y1AfNLOO8NpHUlo9s8e5XrDBg41MnA==", "iv": "5Rc0zrHf4bMWkcNBKBPraw=="}}}
-  ✓ Signature generated: MEQCIBFAnZ469lg111ULWsQ1noWun+rp...
+  Data to sign: {"device_id": "iphone_5", "shares": {"iphone_1": {"encrypted_share": "OMRsDKJwOZadWcADAbBqYDrVs3+c5r9NC4aj3/TnQoJO6iYhTvu8rXTMtOhTdnMP", "encrypted_key": "NHS+kvQIqb2OlQ2jwGctYe7IUP9m1RYcC4yIWBDvkvFZ8DMZw+1AaT5uVid4WilFny8dK01Ub1iNF8ICqZtp3eniZiDXF6ne7GdDaRVMVQdR7Wf0cnH55/YDoiYaF5vMbxldPeoFEKxurf42KxXMU/XM1GlLQPa8FixU3h7RjPh5D7m2p+ay7k9uAhOngFt3SAxQ24FgZQIYQg8zMpRbbno5Uw5EqMhBsYpXufUC50V09oxq2MoTNWRc2JHKwHASamO9bYsElc3LsodfbHbipUrMJ5KAQ2nnMSFyfYW4MqWg/qukmnYOQs+4eCXyz+QxI+HB6C69YqrzUgPsfIIRow==", "iv": "Gv/LUBas4myOMkkPcMgppg=="}, "iphone_2": {"encrypted_share": "3lhG94n3wYPXuh7zcZWakY86iIXZKFZxfMYV79iiLEeePvM5Cl+Bt1paBgpgSSHg", "encrypted_key": "jm5UCnZoyaVDWdUe6lYZ26/UPKbHH2HRQcmz9ywbGzHSpYeRaKFcrlr9glUiKXZJtnZ9Ok9N2ilFyZwRRmlrabPJFpNS2jCMBoIptGVg4fem1LgkE4+6sjvoXhXLOg3FfQh8Or165aFfJpj/9x0sDkFJaEyM23c+hcH/b9Ocy49Y8KdEDF61yJX1d800MJBgdM82SfbPoEfPVoA2IsyKj6N+JcUG5xfvmYGkHW6y95Q6tGObsQQNB2ILocD/wCnK9uRfHeV90xjVZ8Zz7R8ujPZENhtf3AGFNb/q3bft4CKpfqDnXFfFSCTY3QvvbcGyrkCjzjlJS4b6xKtYwDAI1w==", "iv": "Gn9DKRU7qrs7wtZQuyJ9og=="}, "iphone_3": {"encrypted_share": "AVNFUZOJN35DO71OXz0T3jVEEgWXFc2aQuPvAzjrvD3ISJ5K2940+zJwQ05Sbj1N", "encrypted_key": "ixZoRS8NXwqaxXE+5TspvdvU5ODLthAF41E0CEbo8x6CMWT5+KsOc7FRp96K8ZmKRihUkUJb19eL/IEp/LAvJWF+cBOoSiVk3gcY92/4rYe6eC2bnnJUXIjesFc0D7IC5LA0seEd33xUi4dVldqnauHyJ4nrGL6khVafLG7vc1vNDnJrN3JhM2TDQunchzm/mFi0zgV7fIFSe1WIqVEM85R0K16IAbETb3drB0rcudpWBJJ3nzG8jIV6xjceTMnhjqwXGQxZCuMFUvrNu9HMFUq1CmIInwX27LmMgQC8aV2G5Ro/CQwjsUNxN8ADLc1nhqT6G9mWgbqQyCfY5WPFCQ==", "iv": "PWbwngP3Db+Gdht5WO+9Rw=="}, "iphone_4": {"encrypted_share": "RU6AhJWL7hnm4qFwtZwnhrGF6+q1rOQJdoqYi+eUvfm9Ge1iOGmtuZKIllLDLFKJ", "encrypted_key": "Y7YhynlWfSwr/SPHRQMBOuGx1b61BWFrMJ1YvjO9DSmrBLYVu2zW6jkqx3ucUi7QhRd9PFuMinzjdXcXW7EdL4SmS4BvoOFclVvirXn4Mzzz6idjmu3jthm7RYbCj5zizIyphB4w1ab7q6sHHBGPWU7hjOJuyN8P+13HcWqGxeZheMVVfjXO2SCUaIDr2DAlUw4itq2z1DiXI6wIVDL+xzxnCI5LqZAxKuoDBcoCVOKaoSbv0OCjgUFX1/MOfcebw0UU6o09xMGBKH1aSCMH/eCwG9s5jmgPLiiTu1SskmG5JKPtWS4rAUZh/Ehx+rQW8e/D/wEUMDnnGF03RW2JLQ==", "iv": "umjtQMdGPkdhznZaP+D4sg=="}}}
+  ✓ Signature generated: MEQCIA4GeFj/ohZEVzbhGPtCZ21aVblg...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Server response status: 200
@@ -343,7 +343,7 @@ Server response: {'message': 'Transaction signature requested', 'txn_hash': 'c5c
 Transaction hash: c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160
 
 Fetching aggregated public key...
-Threshold wallet address: 0xf13a446b6bdeb8ab5c07f4b0aadbe979caab7c1d
+Threshold wallet address: 0xbb63b98e4588ddf8dfb0674f6a0bc52eced0a155
 
 === Collecting Partial Signatures ===
 Need 3 signatures for threshold...
@@ -351,89 +351,89 @@ Need 3 signatures for threshold...
 Device 1 of 3: iphone_1
   Signing data for iphone_1...
   Data to sign: c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160
-  ✓ Signature generated: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6...
+  ✓ Signature generated: MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
-  Partial signature: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6...
+  Partial signature: MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/...
   Length: 96 characters
-  Raw bytes: 72 bytes
+  Raw bytes: 70 bytes
   Signing data for iphone_1...
-  Data to sign: {"device_id": "iphone_1", "partial_signature": "MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3mask"}
-  ✓ Signature generated: MEQCIHCPc+OTlP6pmoEgf9eDyWXB+X1T...
+  Data to sign: {"device_id": "iphone_1", "partial_signature": "MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q=="}
+  ✓ Signature generated: MEUCIQDypnnQhcKB5jBNZNdYWq45yB9q...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending to server for aggregation...
-  Server response: {'final_signature': 'MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3maskMEUCIQCVqQK+HA++7uy6ftlZPVCc1KzmxDDLANFx0ICZVcL9tQIgGQLf8PZ0SDWfyx4AeHDVLBQAPPKrxMzDeU80NwLInts=MEUCIAX+Xc+yLMvyvIkYWZkofbdq7brC0KmGxzP2rdOTe+pwAiEA9rf17xmLqdTGOqmX9vor/HT8sznBnYkcn4/UuDqp3zI=', 'signature_ready': True}
+  Server response: {'final_signature': 'MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q==MEUCIEXSh699YZB+77bI+fc9r7rCcfu4TCSVytdHGz9xKAOpAiEAkLrV87mNg6nnZCxwvLkE+SpNbig1ICVbOQjUYeTM9Ho=MEYCIQCsRBZTRz3Pt4xKFLhb5HYa0aZ8jlwSPAuza+1OCpkzLwIhAMXcXLO+9ShM/cyo2GeDg4RF39E4uokfbnrNajujQOX0', 'signature_ready': True}
   ✓ Threshold reached! Final signature ready
 
 Device 2 of 3: iphone_2
   Signing data for iphone_2...
   Data to sign: c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160
-  ✓ Signature generated: MEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUx...
+  ✓ Signature generated: MEUCID+frNFiwSsaPR94K0z1gp9zdqJq...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
-  Partial signature: MEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUx...
+  Partial signature: MEUCID+frNFiwSsaPR94K0z1gp9zdqJq...
   Length: 96 characters
-  Raw bytes: 72 bytes
+  Raw bytes: 71 bytes
   Signing data for iphone_2...
-  Data to sign: {"device_id": "iphone_2", "partial_signature": "MEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUxZ6sD7bwtFoWFgJE8CAIhAPT+kZ5zw94vM/Aa3Nq6TI69FujXe0BKSDS7LWCXDnsl"}
-  ✓ Signature generated: MEYCIQDx4btapaJhyMlmCEKHwyu91ned...
+  Data to sign: {"device_id": "iphone_2", "partial_signature": "MEUCID+frNFiwSsaPR94K0z1gp9zdqJqe+DaZLHa5jrqD54RAiEA3tUACrhkAkVRCmmE5kPhR5WJud9EsXkXs2gRFV94InE="}
+  ✓ Signature generated: MEUCIDKNA0F69eJUj+i/R0YgZF91rWOZ...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending to server for aggregation...
-  Server response: {'final_signature': 'MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3maskMEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUxZ6sD7bwtFoWFgJE8CAIhAPT+kZ5zw94vM/Aa3Nq6TI69FujXe0BKSDS7LWCXDnslMEUCIAX+Xc+yLMvyvIkYWZkofbdq7brC0KmGxzP2rdOTe+pwAiEA9rf17xmLqdTGOqmX9vor/HT8sznBnYkcn4/UuDqp3zI=', 'signature_ready': True}
+  Server response: {'final_signature': 'MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q==MEUCID+frNFiwSsaPR94K0z1gp9zdqJqe+DaZLHa5jrqD54RAiEA3tUACrhkAkVRCmmE5kPhR5WJud9EsXkXs2gRFV94InE=MEYCIQCsRBZTRz3Pt4xKFLhb5HYa0aZ8jlwSPAuza+1OCpkzLwIhAMXcXLO+9ShM/cyo2GeDg4RF39E4uokfbnrNajujQOX0', 'signature_ready': True}
   ✓ Threshold reached! Final signature ready
 
 Device 3 of 3: iphone_3
   Signing data for iphone_3...
   Data to sign: c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160
-  ✓ Signature generated: MEYCIQDFOHg+D6CTQNxMXgylGMe2NaoT...
+  ✓ Signature generated: MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
-  Partial signature: MEYCIQDFOHg+D6CTQNxMXgylGMe2NaoT...
+  Partial signature: MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g...
   Length: 96 characters
-  Raw bytes: 72 bytes
+  Raw bytes: 71 bytes
   Signing data for iphone_3...
-  Data to sign: {"device_id": "iphone_3", "partial_signature": "MEYCIQDFOHg+D6CTQNxMXgylGMe2NaoTV4nfLRggxh3x2vMYEQIhAIsImElYFXX+yEAnWqc2OWAnOTsxqbVrnrh5UpVKZ94+"}
-  ✓ Signature generated: MEYCIQCbUJ5Bf2AoSupJUksfcCPyIuyP...
+  Data to sign: {"device_id": "iphone_3", "partial_signature": "MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g91E8q18mLWHps7eOPgIgL1nlwUiWrLBPV/8L+MufUBmX5jn4Bj7qCLbN2Cq98Gw="}
+  ✓ Signature generated: MEYCIQCGUnCKGSgmPAp2E4rlhRxbiO35...
   ✓ Signature verified successfully
   ✓ Signature verified with public key
   Sending to server for aggregation...
-  Server response: {'final_signature': 'MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3maskMEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUxZ6sD7bwtFoWFgJE8CAIhAPT+kZ5zw94vM/Aa3Nq6TI69FujXe0BKSDS7LWCXDnslMEYCIQDFOHg+D6CTQNxMXgylGMe2NaoTV4nfLRggxh3x2vMYEQIhAIsImElYFXX+yEAnWqc2OWAnOTsxqbVrnrh5UpVKZ94+', 'signature_ready': True}
+  Server response: {'final_signature': 'MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q==MEUCID+frNFiwSsaPR94K0z1gp9zdqJqe+DaZLHa5jrqD54RAiEA3tUACrhkAkVRCmmE5kPhR5WJud9EsXkXs2gRFV94InE=MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g91E8q18mLWHps7eOPgIgL1nlwUiWrLBPV/8L+MufUBmX5jn4Bj7qCLbN2Cq98Gw=', 'signature_ready': True}
   ✓ Threshold reached! Final signature ready
 
 === Signature Aggregation Process ===
 Partial signatures collected:
-  iphone_1: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3mask
+  iphone_1: MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q==
     Length: 96 characters
-    Raw bytes: 72 bytes
-    Raw hex: 3046022100824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d3ee022100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb799ab24
+    Raw bytes: 70 bytes
+    Raw hex: 304402205e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae022056d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e1
   ✓ Signature verified successfully
     Verifies: True
-  iphone_2: MEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUxZ6sD7bwtFoWFgJE8CAIhAPT+kZ5zw94vM/Aa3Nq6TI69FujXe0BKSDS7LWCXDnsl
+  iphone_2: MEUCID+frNFiwSsaPR94K0z1gp9zdqJqe+DaZLHa5jrqD54RAiEA3tUACrhkAkVRCmmE5kPhR5WJud9EsXkXs2gRFV94InE=
     Length: 96 characters
-    Raw bytes: 72 bytes
-    Raw hex: 3046022100d2a0a2259eb34eb1f920038669a840c09ad53167ab03edbc2d16858580913c08022100f4fe919e73c3de2f33f01adcdaba4c8ebd16e8d77b404a4834bb2d60970e7b25
+    Raw bytes: 71 bytes
+    Raw hex: 304502203f9facd162c12b1a3d1f782b4cf5829f7376a26a7be0da64b1dae63aea0f9e11022100ded5000ab8640245510a6984e643e1479589b9df44b17917b36811155f782271
   ✓ Signature verified successfully
     Verifies: True
-  iphone_3: MEYCIQDFOHg+D6CTQNxMXgylGMe2NaoTV4nfLRggxh3x2vMYEQIhAIsImElYFXX+yEAnWqc2OWAnOTsxqbVrnrh5UpVKZ94+
+  iphone_3: MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g91E8q18mLWHps7eOPgIgL1nlwUiWrLBPV/8L+MufUBmX5jn4Bj7qCLbN2Cq98Gw=
     Length: 96 characters
-    Raw bytes: 72 bytes
-    Raw hex: 3046022100c538783e0fa09340dc4c5e0ca518c7b635aa135789df2d1820c61df1daf318110221008b089849581575fec840275aa736396027393b31a9b56b9eb87952954a67de3e
+    Raw bytes: 71 bytes
+    Raw hex: 3045022100eae4719ee471e905116b56b5752f21a6856d60f7513cab5f262d61e9b3b78e3e02202f59e5c14896acb04f57ff0bf8cb9f501997e639f8063eea08b6cdd82abdf06c
   ✓ Signature verified successfully
     Verifies: True
 
-Aggregated signature: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qvWLPzHMSigElS/r6W2lpzbf4S0vKQflf1y3maskMEYCIQDSoKIlnrNOsfkgA4ZpqEDAmtUxZ6sD7bwtFoWFgJE8CAIhAPT+kZ5zw94vM/Aa3Nq6TI69FujXe0BKSDS7LWCXDnslMEYCIQDFOHg+D6CTQNxMXgylGMe2NaoTV4nfLRggxh3x2vMYEQIhAIsImElYFXX+yEAnWqc2OWAnOTsxqbVrnrh5UpVKZ94+
+Aggregated signature: MEQCIF6LfrKCz3Pi4cthnCg1JFgwS2d/CAobL8kw2feHDRGuAiBW2SM57upDG2ym/vxeqK/hhOcHiwHIVIcGPYpXPmsl4Q==MEUCID+frNFiwSsaPR94K0z1gp9zdqJqe+DaZLHa5jrqD54RAiEA3tUACrhkAkVRCmmE5kPhR5WJud9EsXkXs2gRFV94InE=MEUCIQDq5HGe5HHpBRFrVrV1LyGmhW1g91E8q18mLWHps7eOPgIgL1nlwUiWrLBPV/8L+MufUBmX5jn4Bj7qCLbN2Cq98Gw=
   Length: 288 characters
-  Raw bytes: 216 bytes
-  Raw hex: 3046022100824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d3ee022100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb799ab243046022100d2a0a2259eb34eb1f920038669a840c09ad53167ab03edbc2d16858580913c08022100f4fe919e73c3de2f33f01adcdaba4c8ebd16e8d77b404a4834bb2d60970e7b253046022100c538783e0fa09340dc4c5e0ca518c7b635aa135789df2d1820c61df1daf318110221008b089849581575fec840275aa736396027393b31a9b56b9eb87952954a67de3e
+  Raw bytes: 70 bytes
+  Raw hex: 304402205e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae022056d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e1
 
 === Complete Ethereum Transaction ===
 {
   "raw": {
     "to": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     "value": "0x0de0b6b3a7640000",
-    "from": "0xf13a446b6bdeb8ab5c07f4b0aadbe979caab7c1d",
+    "from": "0xbb63b98e4588ddf8dfb0674f6a0bc52eced0a155",
     "nonce": "0x0",
     "gasPrice": "0x04a817c800",
     "gasLimit": "0x5208",
@@ -442,17 +442,17 @@ Aggregated signature: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qv
     "type": "0x0"
   },
   "signature": {
-    "r": "0x00824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d3",
-    "s": "0x2100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb799",
+    "r": "0x5e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae",
+    "s": "0x56d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e1",
     "v": "0x1b"
   },
   "hash": "c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160",
-  "from": "0xf13a446b6bdeb8ab5c07f4b0aadbe979caab7c1d",
-  "serialized": "0xc5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab16000824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d32100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb7991b"
+  "from": "0xbb63b98e4588ddf8dfb0674f6a0bc52eced0a155",
+  "serialized": "0xc5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab1605e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae56d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e11b"
 }
 
 === Transaction Components ===
-1. From Address: 0xf13a446b6bdeb8ab5c07f4b0aadbe979caab7c1d
+1. From Address: 0xbb63b98e4588ddf8dfb0674f6a0bc52eced0a155
 2. To Address: 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
 3. Value: 1000000000000000000 wei
 4. Gas Price: 20000000000 wei
@@ -461,18 +461,17 @@ Aggregated signature: MEYCIQCCTBqNfv6coa5MUKh/PoyIh5C6hjWIvE+CMFhsrVLT7gIhAKr1qv
 7. Chain ID: 1
 
 8. Signature Components:
-   R: 0x00824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d3
-   S: 0x2100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb799
+   R: 0x5e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae
+   S: 0x56d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e1
    V: 27
 
 9. Transaction Hash: c5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab160
 
 10. Full Serialized Transaction:
-0xc5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab16000824c1a8d7efe9ca1ae4c50a87f3e8c888790ba863588bc4f8230586cad52d32100aaf5aaf58b3f31cc4a2804952febe96da5a736dfe12d2f2907e57f5cb7991b
+0xc5c9c9b09cbe03afffd6dee3c5a5964f7f2596e4c337bfc9effe7d94192ab1605e8b7eb282cf73e2e1cb619c28352458304b677f080a1b2fc930d9f7870d11ae56d92339eeea431b6ca6fefc5ea8afe184e7078b01c85487063d8a573e6b25e11b
 
 === Final Status ===
 ✓ Transaction is valid and ready for broadcast
-✓ Signing address verified: 0xf13a446b6bdeb8ab5c07f4b0aadbe979caab7c1d
+✓ Signing address verified: 0xbb63b98e4588ddf8dfb0674f6a0bc52eced0a155
 
 ✨ Test flow complete!
-(thresh_venv) cmc@cmc-pro thresh_demo % 
