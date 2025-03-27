@@ -1,10 +1,9 @@
 from flask import Flask, request, jsonify
-import os
-import json
-import base64
-import random
+from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography.hazmat.primitives import serialization, hashes
+import base64
+import json
+import random
 from eth_account import Account
 from eth_account._utils.structured_data.hashing import hash_message
 from eth_hash.auto import keccak
@@ -29,7 +28,7 @@ threshold = 3
 total_signers = 5
 
 # Store device information
-devices = {}  # {device_id: {"public_key": key, "rsa_key": key}}
+devices = {}  # {device_id: {"public_key": key}}
 
 # Constants
 THRESHOLD = 3
@@ -101,30 +100,19 @@ def enroll():
     data = request.json
     device_id = data['device_id']
     
-    # Load public keys
+    # Load public key
     public_key = serialization.load_pem_public_key(
         data['public_key'].encode()
     )
-    rsa_key = serialization.load_pem_public_key(
-        data['rsa_key'].encode()
-    )
     
-    # Store device info in both places
+    # Store device info
     devices[device_id] = {
-        "public_key": public_key,
-        "rsa_key": rsa_key
-    }
-    
-    # Also store in enrolled_devices for compatibility
-    enrolled_devices[device_id] = {
-        "public_key": data['public_key'],  # Store PEM format
-        "rsa_key": data['rsa_key']
+        "public_key": public_key
     }
     
     print(f"✓ Device {device_id} enrolled")
     print(f"  Public key: {data['public_key']}")
-    print(f"  RSA key: {data['rsa_key']}")
-    print(f"  Total devices enrolled: {len(enrolled_devices)}")
+    print(f"  Total devices enrolled: {len(devices)}")
     
     return jsonify({"status": "success", "message": f"Device {device_id} enrolled"})
 
