@@ -154,6 +154,15 @@ Each client represents a participant in the threshold signature scheme:
 - `--host`: Host address to bind to (default: 0.0.0.0)
 
 ### Client Arguments
-- `--name`: Unique name for this client device
-- `--server`: URL of the coordination server
+- `--checkin`: Check in with server
+- `--list-keys`: List stored EOAs and their key material
+- `--show-device`: Show device information and configuration
+- `--test-ceremony`: Run a test signing ceremony
+- `--num-devices NUM_DEVICES`: Number of test devices to simulate in ceremony
+- `-h, --help`: Show help message and exit
+
+The client supports multiple modes of operation:
+1. Device management (checkin, show info)
+2. Key management (list stored keys)
+3. Testing (run ceremony with simulated devices)
 
