@@ -5,7 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY server/ .
+COPY server/config.json config.json
+COPY server/server.py .
 
 EXPOSE 5010
 

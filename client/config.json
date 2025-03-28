@@ -1,5 +1,7 @@
 {
     "enrollment_key": "supersecretpassword",
     "server_url": "http://localhost:5010",
-    "device_id": "device1"
+    "device_id": "device1",
+    "devices": {},
+    "ceremonies": {}
 } 

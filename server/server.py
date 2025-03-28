@@ -20,7 +20,7 @@ from eth_account._utils.legacy_transactions import (
 from termcolor import colored
 
 # Load config first
-with open('server/config.json', 'r') as f:
+with open('config.json', 'r') as f:
     SERVER_CONFIG = json.load(f)
 
 # Configure logging
