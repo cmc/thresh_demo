@@ -7,8 +7,33 @@ import random
 from eth_account import Account
 from eth_account._utils.structured_data.hashing import hash_message
 from eth_hash.auto import keccak
+from flask_cors import CORS
+import secrets
+from eth_utils import to_bytes, to_hex, decode_hex, encode_hex
+import sys
+import logging
+from eth_account import Account
+from eth_account._utils.legacy_transactions import (
+    serializable_unsigned_transaction_from_dict,
+    encode_transaction
+)
+from termcolor import colored
+
+# Configure logging first
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(message)s',
+    stream=sys.stdout
+)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+CORS(app)
+
+# Ensure Flask's logger also uses DEBUG level
+app.logger.setLevel(logging.DEBUG)
+for handler in app.logger.handlers:
+    handler.setLevel(logging.DEBUG)
 
 # Configuration
 ENROLLMENT_PASSWORD = "supersecurepassword"
@@ -47,6 +72,41 @@ signing_data = {
     "R": None,  # Combined R value
     "message_hash": None
 }
+
+# Global state
+dkg_state = None
+signing_state = None
+
+# Test EOAs that we want to generate signatures for
+TEST_EOAS = [
+    "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "0x742d35Cc6634C0532925a3b844Bc454e4438f44f"
+]
+
+# Test EOAs and their transactions
+TEST_TRANSACTIONS = {
+    "0x742d35Cc6634C0532925a3b844Bc454e4438f44e": {
+        "to": decode_hex("0x742d35Cc6634C0532925a3b844Bc454e4438f44f"),  # Convert to bytes
+        "value": 1000000000000000000,  # 1 ETH in wei (as int)
+        "nonce": 0,  # as int
+        "gasPrice": 20000000000,  # 20 Gwei (as int)
+        "gas": 21000,  # as int
+        "chainId": 1,  # Mainnet
+        "data": b''  # as bytes
+    }
+}
+
+def format_tx_for_json(tx):
+    """Convert transaction values to hex strings for JSON"""
+    return {
+        "to": to_hex(tx["to"]),
+        "value": hex(tx["value"]),
+        "nonce": hex(tx["nonce"]),
+        "gasPrice": hex(tx["gasPrice"]),
+        "gas": hex(tx["gas"]),
+        "chainId": tx["chainId"],
+        "data": to_hex(tx["data"])
+    }
 
 # Utility: Hash Ethereum transactions
 def hash_transaction(tx_data):
@@ -226,12 +286,25 @@ def recover_private_key():
 
 @app.route('/dkg/start', methods=['POST'])
 def start_dkg():
-    """Initialize a new DKG round"""
-    global dkg_round
-    dkg_round = 1
-    dkg_shares.clear()
-    print("\n=== Starting New DKG Round ===")
-    return jsonify({"status": "success", "round": dkg_round})
+    global dkg_state
+    target_eoa = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+    raw_tx = TEST_TRANSACTIONS[target_eoa]
+    display_tx = format_tx_for_json(raw_tx)
+    
+    dkg_state = {
+        'status': 'in_progress',
+        'commitments': {},
+        'shares': {},
+        'target_eoa': target_eoa,
+        'transaction': raw_tx,  # Store raw transaction
+        'display_transaction': display_tx  # Store display version
+    }
+    
+    return jsonify({
+        'status': 'ok', 
+        'target_eoa': target_eoa,
+        'transaction': display_tx
+    })
 
 @app.route('/dkg/submit', methods=['POST'])
 def submit_dkg_data():
@@ -268,84 +341,218 @@ def submit_dkg_data():
 
 @app.route('/signing/start', methods=['POST'])
 def start_signing():
-    """Initialize a new signing round"""
-    data = request.json
-    message_hash = data['message_hash']
+    global signing_state
+    if not dkg_state:
+        return jsonify({'error': 'DKG not initialized'}), 400
     
-    # Reset signing data
-    signing_data.clear()
-    signing_data.update({
-        "commitments": {},
-        "mta_values": {},
-        "sig_shares": {},
-        "R": None,
-        "message_hash": message_hash
+    target_eoa = dkg_state['target_eoa']
+    display_tx = dkg_state['display_transaction']  # Use display version
+    message_hash = "0x" + secrets.token_hex(32)
+    
+    signing_state = {
+        'status': 'in_progress',
+        'target_eoa': target_eoa,
+        'message_hash': message_hash,
+        'transaction': dkg_state['transaction'],  # Store raw version
+        'display_transaction': display_tx,  # Store display version
+        'commitments': {},
+        'mta_values': {}
+    }
+    
+    return jsonify({
+        'status': 'ok',
+        'target_eoa': target_eoa,
+        'message_hash': message_hash,
+        'transaction': display_tx  # Send display version
     })
-    
-    print("\n=== Starting New Signing Round ===")
-    print(f"  Message hash: {message_hash}")
-    return jsonify({"status": "success", "message_hash": message_hash})
 
 @app.route('/signing/commit', methods=['POST'])
-def submit_commitment():
-    """Submit R_i and Gamma_i commitments"""
+def submit_signing_commitment():
+    if not signing_state:
+        return jsonify({'error': 'Signing not initialized'}), 400
+    
     data = request.json
     device_id = data['device_id']
     commitment = data['commitment']
     
-    print(f"\n=== Received Commitment from {device_id} ===")
-    print(f"  R_i: ({commitment['R_i']['x']}, {commitment['R_i']['y']})")
-    print(f"  Gamma_i: ({commitment['Gamma_i']['x']}, {commitment['Gamma_i']['y']})")
+    logger.debug(f"Received commitment from {device_id}")
     
-    signing_data["commitments"][device_id] = commitment
+    signing_state['commitments'][device_id] = {
+        'k_i': commitment['k_i'],
+        'gamma_i': commitment['gamma_i'],
+        'R_i': commitment['R_i']
+    }
     
-    if len(signing_data["commitments"]) == TOTAL_SIGNERS:
-        print("  ✓ All commitments received")
-        return jsonify({
-            "status": "complete",
-            "commitments": signing_data["commitments"]
-        })
+    # If we have all commitments, generate final signature
+    if len(signing_state['commitments']) == len(dkg_state['shares']):
+        logger.debug("All commitments received, generating final signature...")
+        
+        # Combine shares to generate final signature
+        k = 0
+        gamma = 0
+        for device_data in signing_state['commitments'].values():
+            k = (k + int(device_data['k_i'], 16)) % CURVE_ORDER
+            gamma = (gamma + int(device_data['gamma_i'], 16)) % CURVE_ORDER
+        
+        # Calculate R = k * G
+        R = ec.derive_private_key(k, CURVE).public_key()
+        r = R.public_numbers().x % CURVE_ORDER
+        
+        # Calculate s using combined shares
+        message_int = int(signing_state['message_hash'], 16)
+        k_inv = pow(k, -1, CURVE_ORDER)
+        s = (k_inv * (message_int + r * gamma)) % CURVE_ORDER
+        
+        # Calculate v (27 or 28 depending on y coordinate)
+        v = 27 + (R.public_numbers().y % 2)
+        
+        # Create final signed transaction
+        signed_tx = {
+            **signing_state['transaction'],
+            "r": hex(r),
+            "s": hex(s),
+            "v": hex(v)
+        }
+        
+        # Create serialized transaction
+        tx_unsigned = serializable_unsigned_transaction_from_dict(signing_state['transaction'])
+        tx_signed = encode_transaction(tx_unsigned, vrs=(v, r, s))
+        
+        # Store in signing state
+        signing_state['final_signature'] = {
+            'r': hex(r),
+            's': hex(s),
+            'v': hex(v)
+        }
+        signing_state['signed_transaction'] = signed_tx
+        signing_state['serialized_transaction'] = encode_hex(tx_signed)
+        signing_state['status'] = 'completed'
+        
+        # Print final transaction details in green
+        logger.info("\n" + colored("=== 🔐 Final Signed Transaction ===", 'green', attrs=['bold']))
+        logger.info(colored("\nTransaction Details:", 'green'))
+        logger.info(colored(json.dumps(signed_tx, indent=2), 'green'))
+        
+        logger.info(colored("\nSignature Components:", 'green'))
+        logger.info(colored(f"R: {hex(r)}", 'green'))
+        logger.info(colored(f"S: {hex(s)}", 'green'))
+        logger.info(colored(f"V: {hex(v)}", 'green'))
+        
+        logger.info(colored("\nBroadcastable Transaction:", 'green'))
+        logger.info(colored(f"Hex: {encode_hex(tx_signed)}", 'green'))
+        
+        logger.info(colored("\nParticipant Information:", 'green'))
+        logger.info(colored(f"Total Participants: {len(signing_state['commitments'])}", 'green'))
+        for participant_id in signing_state['commitments']:
+            logger.info(colored(f"• {participant_id} contributed partial signature", 'green'))
+        
+        return jsonify({'status': 'completed'})
     
-    print(f"  → Waiting for more commitments ({len(signing_data['commitments'])}/{TOTAL_SIGNERS})")
-    return jsonify({
-        "status": "waiting",
-        "current": len(signing_data["commitments"]),
-        "total": TOTAL_SIGNERS
-    })
+    return jsonify({'status': 'ok'})
 
 @app.route('/signing/mta', methods=['POST'])
 def submit_mta():
-    """Submit MtA protocol values"""
+    if not signing_state:
+        return jsonify({'error': 'Signing not initialized'}), 400
+    
     data = request.json
     from_device = data['from']
     to_device = data['to']
     delta = data['delta']
     
-    print(f"\n=== Received MtA Value ===")
-    print(f"  From: {from_device}")
-    print(f"  To: {to_device}")
+    logger.info(f"\n=== Received MtA Value ===")
+    logger.info(f"  From: {from_device}")
+    logger.info(f"  To: {to_device}")
     
-    if from_device not in signing_data["mta_values"]:
-        signing_data["mta_values"][from_device] = {}
-    signing_data["mta_values"][from_device][to_device] = delta
+    # Store MtA value
+    if 'mta_values' not in signing_state:
+        signing_state['mta_values'] = {}
     
-    # Count total MtA values
-    total_values = sum(len(values) for values in signing_data["mta_values"].values())
-    expected_values = TOTAL_SIGNERS * (TOTAL_SIGNERS - 1)  # Each device sends to all others
+    mta_key = f"{from_device}->{to_device}"
+    signing_state['mta_values'][mta_key] = delta
     
-    if total_values == expected_values:
-        print("  ✓ All MtA values received")
-        return jsonify({
-            "status": "complete",
-            "mta_values": signing_data["mta_values"]
-        })
+    # Calculate n from number of unique devices in commitments
+    n = len(signing_state['commitments'])
+    expected_mta_count = n * (n - 1)  # Each device sends to every other device
+    current_count = len(signing_state['mta_values'])
     
-    print(f"  → Waiting for more MtA values ({total_values}/{expected_values})")
-    return jsonify({
-        "status": "waiting",
-        "current": total_values,
-        "total": expected_values
-    })
+    logger.info(f"  MtA Progress: {current_count}/{expected_mta_count}")
+    logger.info(f"  Number of participants: {n}")
+    
+    # Only proceed when we have all MtA values and haven't generated signature yet
+    if current_count < expected_mta_count or signing_state.get('status') == 'completed':
+        return jsonify({'status': 'ok'})
+    
+    # Now we really have all MtA values and haven't generated signature yet
+    logger.info(colored("\n✓ All MtA values received!", 'green'))
+    
+    # Generate final signature
+    k = 0
+    gamma = 0
+    for device_data in signing_state['commitments'].values():
+        k = (k + int(device_data['k_i'], 16)) % CURVE_ORDER
+        gamma = (gamma + int(device_data['gamma_i'], 16)) % CURVE_ORDER
+    
+    # Calculate R = k * G
+    R = ec.derive_private_key(k, CURVE).public_key()
+    r = R.public_numbers().x % CURVE_ORDER
+    
+    # Calculate s using combined shares
+    message_int = int(signing_state['message_hash'], 16)
+    k_inv = pow(k, -1, CURVE_ORDER)
+    s = (k_inv * (message_int + r * gamma)) % CURVE_ORDER
+    
+    # Calculate v (27 or 28 depending on y coordinate)
+    v = 27 + (R.public_numbers().y % 2)
+    
+    # Create final signed transaction with hex strings
+    raw_tx = signing_state['transaction']
+    signed_tx = {
+        "to": to_hex(raw_tx["to"]),
+        "value": hex(raw_tx["value"]),
+        "nonce": hex(raw_tx["nonce"]),
+        "gasPrice": hex(raw_tx["gasPrice"]),
+        "gas": hex(raw_tx["gas"]),
+        "chainId": raw_tx["chainId"],
+        "data": to_hex(raw_tx["data"]),
+        "r": hex(r),
+        "s": hex(s),
+        "v": hex(v)
+    }
+    
+    # Create serialized transaction
+    tx_unsigned = serializable_unsigned_transaction_from_dict(signing_state['transaction'])
+    tx_signed = encode_transaction(tx_unsigned, vrs=(v, r, s))
+    
+    # Store in signing state
+    signing_state['final_signature'] = {
+        'r': hex(r),
+        's': hex(s),
+        'v': hex(v)
+    }
+    signing_state['signed_transaction'] = signed_tx
+    signing_state['serialized_transaction'] = encode_hex(tx_signed)
+    signing_state['status'] = 'completed'
+    
+    # Print final transaction in green
+    logger.info(colored("\n=== 🔐 Final Signed Transaction ===", 'green', attrs=['bold']))
+    logger.info(colored("\nTransaction Details:", 'green'))
+    logger.info(colored(json.dumps(signed_tx, indent=2), 'green'))
+    
+    logger.info(colored("\nSignature Components:", 'green'))
+    logger.info(colored(f"R: {hex(r)}", 'green'))
+    logger.info(colored(f"S: {hex(s)}", 'green'))
+    logger.info(colored(f"V: {hex(v)}", 'green'))
+    
+    logger.info(colored("\nBroadcastable Transaction:", 'green'))
+    logger.info(colored(f"Hex: {encode_hex(tx_signed)}", 'green'))
+    
+    logger.info(colored("\nParticipant Information:", 'green'))
+    logger.info(colored(f"Total Participants: {len(signing_state['commitments'])}", 'green'))
+    for participant_id in signing_state['commitments']:
+        logger.info(colored(f"• {participant_id} contributed partial signature", 'green'))
+    
+    return jsonify({'status': 'completed'})
 
 @app.route('/signing/share', methods=['POST'])
 def submit_signature_share():
@@ -396,4 +603,4 @@ def submit_signature_share():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5010)
+    app.run(host='0.0.0.0', port=5010, debug=True)
