@@ -19,13 +19,14 @@ This implementation follows the GG20 protocol (Gennaro & Goldfeder 2020) which p
 ## Docker 
 
 Build and run the server:
+```
 docker build -t gg20-server -f server/Dockerfile .
 docker run -p 5010:5010 gg20-server
 
 Build and run the client:
 docker build -t gg20-client -f client/Dockerfile .
 docker run --network host gg20-client --test-ceremony --num-devices 3
-
+```
 ## Components
 
 ### Server (`server.py`)
