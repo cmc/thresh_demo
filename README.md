@@ -149,3 +149,11 @@ Each client represents a participant in the threshold signature scheme:
 
 ## Command Line Arguments
 
+### Server Arguments
+- `--port`: Port to run server on (default: 5010)
+- `--host`: Host address to bind to (default: 0.0.0.0)
+
+### Client Arguments
+- `--name`: Unique name for this client device
+- `--server`: URL of the coordination server
+
