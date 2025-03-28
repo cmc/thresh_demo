@@ -176,4 +176,9 @@ The client supports multiple modes of operation:
 1. Device management (checkin, show info)
 2. Key management (list stored keys)
 3. Testing (run ceremony with simulated devices)
+   
+### Demo
+
+![image](https://github.com/user-attachments/assets/124237cf-de7c-45fd-9c8e-2e787df6b1b5)
+
 
