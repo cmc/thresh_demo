@@ -1,0 +1,7 @@
+{
+    "enrollment_key": "supersecretpassword",
+    "allowed_devices": [],
+    "max_devices": 10,
+    "port": 5010,
+    "host": "0.0.0.0"
+} 

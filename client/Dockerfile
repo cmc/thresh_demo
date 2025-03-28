@@ -7,6 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY client/ .
 
-ENV SERVER_URL="http://localhost:5010"
-
 ENTRYPOINT ["python", "client.py"] 

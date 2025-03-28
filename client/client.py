@@ -521,6 +521,23 @@ def run_signing_ceremony(devices):
         'duration': duration
     }
 
+def enroll_device(device_id):
+    # Load client config
+    with open('client_config.json', 'r') as f:
+        config = json.load(f)
+        
+    response = requests.post(f"{config['server_url']}/device/enroll", json={
+        'device_id': device_id,
+        'enrollment_key': config['enrollment_key']
+    })
+    
+    if response.status_code != 200:
+        print(f"❌ Enrollment failed: {response.json().get('error', 'Unknown error')}")
+        return False
+        
+    print("✅ Device enrolled successfully")
+    return True
+
 def main():
     parser = argparse.ArgumentParser(description="GG20 Enclave Client")
     parser.add_argument('--checkin', action='store_true', help='Check in with server')

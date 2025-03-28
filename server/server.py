@@ -19,7 +19,11 @@ from eth_account._utils.legacy_transactions import (
 )
 from termcolor import colored
 
-# Configure logging first
+# Load config first
+with open('server/config.json', 'r') as f:
+    SERVER_CONFIG = json.load(f)
+
+# Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(message)s',
@@ -36,7 +40,6 @@ for handler in app.logger.handlers:
     handler.setLevel(logging.DEBUG)
 
 # Configuration
-ENROLLMENT_PASSWORD = "supersecurepassword"
 transactions = []  # Store pending transactions
 partial_signatures = {}
 backup_ciphertext = None  # Store encrypted key
@@ -155,26 +158,29 @@ def public_key_to_eth_address(public_key):
     address = keccak(pub_bytes)[-20:]  # Ethereum address = last 20 bytes of Keccak-256
     return f"0x{address.hex()}"
 
-@app.route('/enroll', methods=['POST'])
-def enroll():
+@app.route('/device/enroll', methods=['POST'])
+def enroll_device():
     data = request.json
+    if not data or 'device_id' not in data or 'enrollment_key' not in data:
+        return jsonify({'error': 'Missing device_id or enrollment_key'}), 400
+        
+    # Check enrollment key against config
+    if data['enrollment_key'] != SERVER_CONFIG['enrollment_key']:
+        return jsonify({'error': 'Invalid enrollment key'}), 401
+        
     device_id = data['device_id']
     
-    # Load public key
-    public_key = serialization.load_pem_public_key(
-        data['public_key'].encode()
-    )
-    
-    # Store device info
-    devices[device_id] = {
-        "public_key": public_key
-    }
-    
-    print(f"✓ Device {device_id} enrolled")
-    print(f"  Public key: {data['public_key']}")
-    print(f"  Total devices enrolled: {len(devices)}")
-    
-    return jsonify({"status": "success", "message": f"Device {device_id} enrolled"})
+    # Check if we've hit max devices
+    if len(SERVER_CONFIG['allowed_devices']) >= SERVER_CONFIG['max_devices']:
+        return jsonify({'error': 'Maximum number of devices reached'}), 400
+        
+    # Add device if not already enrolled
+    if device_id not in SERVER_CONFIG['allowed_devices']:
+        SERVER_CONFIG['allowed_devices'].append(device_id)
+        with open('config.json', 'w') as f:
+            json.dump(SERVER_CONFIG, f, indent=2)
+            
+    return jsonify({'status': 'ok', 'device_id': device_id})
 
 @app.route('/distribute_shares', methods=['POST'])
 def distribute_shares():
@@ -603,4 +609,4 @@ def submit_signature_share():
     })
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5010, debug=True)
+    app.run(host=SERVER_CONFIG['host'], port=SERVER_CONFIG['port'], debug=True)
